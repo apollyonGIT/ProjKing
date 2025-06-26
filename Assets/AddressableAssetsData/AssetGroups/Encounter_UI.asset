@@ -16,22 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 24f3f08b67f27984198ea3dc8f3520bd
-  m_SerializeEntries:
-  - m_GUID: bcfd54944dc479241b8e9193d88039fd
-    m_Address: Dialog_Window
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c715a9e5a0317b44984a67f945917483
-    m_Address: Dialog_Window_To_RelicStore
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5b096ca0ab59a4442bd797b53b9c26de
-    m_Address: Dialog_Window_To_DeviceShop
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 82788fcdea99bc1479d21577250b5840, type: 2}
   m_SchemaSet:

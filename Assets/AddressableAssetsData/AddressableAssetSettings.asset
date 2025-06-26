@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 549d98ed3a6f23941b5b94e6725a24d0
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 2f4b20a6cdb7c450ecb96238d4cccab5
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -46,28 +46,9 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 5b56fd46464890840a149076a49d6a29, type: 2}
   - {fileID: 11400000, guid: 2d4456bea4adf3f4ab8aa977d9f2fd28, type: 2}
-  - {fileID: 11400000, guid: 60dd088be317b2e4cb4425f86f7f7531, type: 2}
-  - {fileID: 11400000, guid: a83ff087ce465bf4189c2e6252dc110d, type: 2}
   - {fileID: 11400000, guid: e1bef198ae1bbdf48a238b82aebbd648, type: 2}
-  - {fileID: 11400000, guid: f649f85099c80e443a6e2b1a9c79df4c, type: 2}
-  - {fileID: 11400000, guid: 5c40299a7ac56de4a97e2e5169435b82, type: 2}
-  - {fileID: 11400000, guid: b0c836f9acbd2f44183700b8ca2d65f9, type: 2}
   - {fileID: 11400000, guid: 944a13575d1425844b28ebb37c174d77, type: 2}
-  - {fileID: 11400000, guid: 6abeb82e71b281b46a146e80aeb89431, type: 2}
-  - {fileID: 11400000, guid: c0a9192ec6a53174aa7c08e86eba3fa7, type: 2}
-  - {fileID: 11400000, guid: 856a41fcafb3fb044bd9b035b0045a60, type: 2}
   - {fileID: 11400000, guid: a810a1a58f848074d86ca3b809e03b91, type: 2}
-  - {fileID: 11400000, guid: 4197a195c6fb0ba4ea896807ce1ca3dd, type: 2}
-  - {fileID: 11400000, guid: 702c4497a6c84f645969c4e6d3734534, type: 2}
-  - {fileID: 11400000, guid: 282f6f356716b6c4db8bd1a08f64dacd, type: 2}
-  - {fileID: 11400000, guid: bfb24b5dc042c894e83f19a3dc996a46, type: 2}
-  - {fileID: 11400000, guid: 6baf4c4159d5d8d419ed0d5fa9c5d1cd, type: 2}
-  - {fileID: 11400000, guid: 5942e1ed8fef51b45a857f9a0183815f, type: 2}
-  - {fileID: 11400000, guid: ae1a865f448a2c842ae9fac8674b0c53, type: 2}
-  - {fileID: 11400000, guid: 0276e479a6254a54e82a46ab141de5b4, type: 2}
-  - {fileID: 11400000, guid: 06329a581e6f8fd44979571f63679e40, type: 2}
-  - {fileID: 11400000, guid: bb8a8695cc01c354f85c0801da612ae5, type: 2}
-  - {fileID: 11400000, guid: c4769dda94f409e4c9daf4452a016157, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1

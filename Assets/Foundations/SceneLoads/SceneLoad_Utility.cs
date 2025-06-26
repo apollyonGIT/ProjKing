@@ -8,10 +8,9 @@ namespace Foundations.SceneLoads
 {
     public class SceneLoad_Utility
     {
-        public static void load_scene_with_loading(string key, bool is_loading_scene_shadow = false)
+        public static void load_scene_with_loading(string key)
         {
             Share_DS.instance.add("next_scene", key);
-            Share_DS.instance.add("is_loading_scene_shadow", is_loading_scene_shadow);
             load_scene("LoadingScene");
         }
 

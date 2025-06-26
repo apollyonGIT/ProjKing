@@ -6,6 +6,7 @@ namespace Commons
     public class Main : MonoBehaviour
     {
         public Config config = null;
+        public string next_scene_name;
 
         //==================================================================================================
 
@@ -18,7 +19,7 @@ namespace Commons
 
             Game_Mgr.on_init_game();
 
-            SceneLoad_Utility.load_scene_async(config.first_load_scene);
+            SceneLoad_Utility.load_scene_async(next_scene_name);
         }
     }
 }

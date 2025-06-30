@@ -24,7 +24,7 @@ namespace Init
 
         public void btn_start_new_game()
         {
-            Game_Mgr.on_start_new_game();
+            Valve.on_start_new_game();
 
             SceneLoad_Utility.load_scene_with_loading(next_scene_name);
         }
@@ -32,7 +32,7 @@ namespace Init
 
         public void btn_exit()
         {
-            Game_Mgr.on_exit_game();
+            Valve.on_exit_game();
 
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

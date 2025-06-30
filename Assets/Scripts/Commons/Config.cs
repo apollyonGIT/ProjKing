@@ -20,6 +20,7 @@ namespace Commons
         }
         #endregion
 
+
         [Range(1, 256)]
         public int pixelPerUnit = 100;
 
@@ -29,10 +30,16 @@ namespace Commons
 
         public float desiredPerspectiveFOV = 60;
 
+
         #region const
         //帧率
         public const int PHYSICS_TICKS_PER_SECOND = 60;
         public const float PHYSICS_TICK_DELTA_TIME = 1f / PHYSICS_TICKS_PER_SECOND;
+        #endregion
+
+
+        #region BLL
+
         #endregion
     }
 

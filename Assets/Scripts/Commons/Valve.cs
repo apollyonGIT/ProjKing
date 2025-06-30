@@ -1,9 +1,8 @@
 ﻿using Foundations;
-using Foundations.Tickers;
 
 namespace Commons
 {
-    public class Game_Mgr
+    public class Valve
     {
 
         //==================================================================================================
@@ -11,6 +10,7 @@ namespace Commons
         public static void on_init_game()
         {
             Share_DS._init();
+            GameContext._init();
         }
 
 
@@ -26,17 +26,6 @@ namespace Commons
 
         public static void on_exit_game()
         {
-        }
-
-
-        public static void on_enter_world(params object[] args)
-        {
-        }
-
-
-        public static void on_exit_world(params object[] args)
-        {
-            Ticker.instance.is_end = true;
         }
     }
 }

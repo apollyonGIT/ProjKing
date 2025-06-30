@@ -433,7 +433,7 @@ MonoBehaviour:
   uiRoot: {fileID: 974641078}
   monoRoot: {fileID: 0}
   producers: []
-  next_scene_name: WorldScene
+  next_scene_name: HomeScene
 --- !u!1 &974641075
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Foundations;
 using UnityEngine;
 
@@ -11,6 +10,7 @@ namespace Homes.Plots
         PlotMgr mgr;
 
         public PlotView plot_model;
+        public Vector2 counts;
 
         //==================================================================================================
 
@@ -29,14 +29,17 @@ namespace Homes.Plots
                 var plot_view = Instantiate(plot_model, transform);
                 cell.add_view(plot_view);
             }
+
+            //规则：移动相机至地块中心
+            HomeSceneRoot.instance.mainCamera.transform.localPosition = 1.25f * new Vector2(Mathf.FloorToInt(counts.x / 2f), Mathf.FloorToInt(counts.y / 2f));
         }
 
 
         IEnumerable<Plot> cells()
         {
-            for (int y = 0; y < 3; y++)
+            for (int y = 0; y < counts.y; y++)
             {
-                for (int x = 0; x < 3; x++)
+                for (int x = 0; x < counts.x; x++)
                 {
                     Plot cell = new();
                     cell.pos = new(x, y);

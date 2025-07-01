@@ -12,6 +12,8 @@ namespace Homes.Plots
         void IModelView<Plot>.attach(Plot owner)
         {
             this.owner = owner;
+
+            transform.localPosition = owner.view_pos;
         }
 
 
@@ -23,6 +25,7 @@ namespace Homes.Plots
 
         void IPlotView.notify_on_tick1()
         {
+            
         }
     }
 }

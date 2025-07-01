@@ -1,4 +1,5 @@
 ﻿using Foundations.MVVM;
+using UnityEngine;
 
 namespace Homes.Plots
 {
@@ -10,8 +11,10 @@ namespace Homes.Plots
 
     public class Plot : Model<Plot, IPlotView>
     {
+        public Vector2 pos;
+        public Vector2 view_pos;
 
-    //==================================================================================================
+        //==================================================================================================
 
         public void tick()
         {

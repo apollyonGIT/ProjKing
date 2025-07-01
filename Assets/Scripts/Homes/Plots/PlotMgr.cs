@@ -1,4 +1,6 @@
-﻿using Foundations;
+﻿using System.Collections.Generic;
+using Foundations;
+using UnityEngine;
 
 namespace Homes.Plots
 {
@@ -9,6 +11,8 @@ namespace Homes.Plots
 
         int IMgr.priority => m_mgr_priority;
         readonly int m_mgr_priority;
+
+        public Dictionary<Vector2, Plot> cells = new();
 
         //==================================================================================================
 
@@ -25,9 +29,9 @@ namespace Homes.Plots
         {
             Mission.instance.attach_mgr(m_mgr_name, this);
 
-            //var ticker = Foundations.Tickers.Ticker.instance;
-            //ticker.add_tick(m_mgr_priority, m_mgr_name, tick);
-            //ticker.add_tick1(m_mgr_priority, m_mgr_name, tick1);
+            var ticker = Foundations.Tickers.Ticker.instance;
+            ticker.add_tick(m_mgr_priority, m_mgr_name, tick);
+            ticker.add_tick1(m_mgr_priority, m_mgr_name, tick1);
         }
 
 
@@ -35,19 +39,27 @@ namespace Homes.Plots
         {
             Mission.instance.detach_mgr(m_mgr_name);
 
-            //var ticker = Foundations.Tickers.Ticker.instance;
-            //ticker.remove_tick(m_mgr_name);
-            //ticker.remove_tick1(m_mgr_name);
+            var ticker = Foundations.Tickers.Ticker.instance;
+            ticker.remove_tick(m_mgr_name);
+            ticker.remove_tick1(m_mgr_name);
         }
 
 
-        //void tick()
-        //{
-        //}
+        void tick()
+        {
+            foreach (var (_, cell) in cells)
+            {
+                cell.tick();
+            }
+        }
 
 
-        //void tick1()
-        //{
-        //}
+        void tick1()
+        {
+            foreach (var (_, cell) in cells)
+            {
+                cell.tick1();
+            }
+        }
     }
 }

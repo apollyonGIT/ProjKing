@@ -1,4 +1,6 @@
-﻿using Foundations;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Foundations;
 using UnityEngine;
 
 namespace Homes.Plots
@@ -22,11 +24,30 @@ namespace Homes.Plots
         {
             mgr = new("PlotMgr", priority);
 
-            for (int i = 0; i < 3; i++)
+            foreach (var cell in cells())
             {
-                var plot = Instantiate(plot_model, transform);
-                plot.transform.localPosition = new Vector2(i * 1.25f, 0);
+                var plot_view = Instantiate(plot_model, transform);
+                cell.add_view(plot_view);
             }
+        }
+
+
+        IEnumerable<Plot> cells()
+        {
+            for (int y = 0; y < 3; y++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    Plot cell = new();
+                    cell.pos = new(x, y);
+                    cell.view_pos = 1.25f * new Vector2(x, y);
+
+                    mgr.cells.Add(cell.pos, cell);
+
+                    yield return cell;
+                }
+            }
+            
         }
     }
 }

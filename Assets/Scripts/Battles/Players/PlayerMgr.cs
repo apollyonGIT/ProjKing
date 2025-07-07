@@ -60,18 +60,18 @@ namespace Battles.Players
         public void move_forward()
         {
             ref var pos = ref cell.pos;
-            pos += cell.dir;
+            pos.x += 1;
 
-            pos.x = Mathf.Clamp(pos.x, 0, GameContext.instance.plots_count - 1);
+            pos.x = Mathf.Min(pos.x, GameContext.instance.plots_count - 1);
         }
 
 
         public void move_back()
         {
             ref var pos = ref cell.pos;
-            pos -= cell.dir;
+            pos.x -= 1;
 
-            pos.x = Mathf.Clamp(pos.x, 0, GameContext.instance.plots_count - 1);
+            pos.x = Mathf.Max(pos.x, 0);
         }
 
 

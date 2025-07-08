@@ -16,7 +16,7 @@ namespace Battles.Players
         public Vector2 view_pos => 1.25f * pos;
 
         public Vector2 dir = Vector2.right;
-        public Quaternion view_dir => calc_view_dir();
+        public int flipX => dir.x > 0 ? 1 : -1;
 
         //==================================================================================================
 
@@ -32,12 +32,6 @@ namespace Battles.Players
             {
                 view.notify_on_tick1();
             }
-        }
-
-
-        Quaternion calc_view_dir()
-        {
-            return EX_Utility.look_rotation_from_left(dir);
         }
     }
 }

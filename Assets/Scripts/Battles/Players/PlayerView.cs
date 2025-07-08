@@ -14,7 +14,7 @@ namespace Battles.Players
             this.owner = owner;
 
             transform.localPosition = owner.view_pos;
-            transform.localRotation = owner.view_dir;
+            transform.localScale = new(owner.flipX, 1, 1);
         }
 
 
@@ -27,7 +27,7 @@ namespace Battles.Players
         void IPlayerView.notify_on_tick1()
         {
             transform.localPosition = owner.view_pos;
-            transform.localRotation = owner.view_dir;
+            transform.localScale = new(owner.flipX, 1, 1);
         }
     }
 }

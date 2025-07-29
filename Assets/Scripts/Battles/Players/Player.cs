@@ -1,4 +1,5 @@
-﻿using Foundations;
+﻿using Commons;
+using Foundations;
 using Foundations.MVVM;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace Battles.Players
     public class Player : Model<Player, IPlayerView>
     {
         public Vector2 pos;
-        public Vector2 view_pos => 1.25f * pos;
+        public Vector2 view_pos => Config.current.pos_coef * pos;
 
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;

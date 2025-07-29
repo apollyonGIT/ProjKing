@@ -1,4 +1,5 @@
-﻿using Foundations.MVVM;
+﻿using Commons;
+using Foundations.MVVM;
 using UnityEngine;
 
 namespace Battles.Plots
@@ -12,7 +13,7 @@ namespace Battles.Plots
     public class Plot : Model<Plot, IPlotView>
     {
         public Vector2 pos;
-        public Vector2 view_pos => 1.25f * pos;
+        public Vector2 view_pos => Config.current.pos_coef * pos;
 
         //==================================================================================================
 

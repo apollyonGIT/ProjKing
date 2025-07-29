@@ -42,8 +42,10 @@ namespace Battles.Plots
         {
             for (int x = 0; x < counts; x++)
             {
-                Plot cell = new();
-                cell.pos = new(x, 0);
+                Plot cell = new()
+                {
+                    pos = new(x, 0)
+                };
 
                 mgr.cells.Add(cell.pos, cell);
 

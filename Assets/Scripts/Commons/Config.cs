@@ -39,7 +39,7 @@ namespace Commons
 
 
         #region BLL
-
+        public float pos_coef = 1.875f;
         #endregion
     }
 

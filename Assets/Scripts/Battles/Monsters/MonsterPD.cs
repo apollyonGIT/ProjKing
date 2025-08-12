@@ -1,0 +1,36 @@
+﻿using Foundations;
+
+namespace Battles.Monsters
+{
+    public class MonsterPD : Producer
+    {
+        public override IMgr imgr => mgr;
+        MonsterMgr mgr;
+
+        //==================================================================================================
+
+        public override void init(int priority)
+        {
+            mgr = new("MonsterMgr", priority);
+            mgr.pd = this;
+        }
+
+
+        public override void call()
+        {
+        }
+
+
+        public Monster cell(uint uid)
+        {
+            Monster cell = new(uid);
+            mgr.cells.Add(cell.GUID, cell);
+
+            Addrs.Addressable_Utility.try_load_asset<MonsterView>(cell._desc.monster_view, out var model_view);
+            var view = Instantiate(model_view, transform);
+            cell.add_view(view);
+
+            return cell;
+        }
+    }
+}

@@ -88,6 +88,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "console",
+            "id": "6c93db75-1218-4b99-b839-ca243672de37",
+            "actions": [
+                {
+                    "name": "delete_console",
+                    "type": "Button",
+                    "id": "e76e8af6-d65e-46ba-8711-b9446ad3aaac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "open_console",
+                    "type": "Button",
+                    "id": "3a708c71-7e72-4920-aec8-80a85dedb3f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a16ea815-1829-4c96-9bed-144f7fd92d8b",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "open_console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c19d023-c614-4265-a1c4-6f825dc89471",
+                    "path": "<Keyboard>/delete",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "delete_console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

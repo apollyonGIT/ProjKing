@@ -32,6 +32,7 @@ namespace Foundations.Excels
             { "bool[]", typeof(List<bool>) },
             { "(int,int)", typeof((int,int)) },
             { "(string,string)", typeof((string,string)) },
+            { "(string,int)", typeof((string,int)) },
 
             { "HaHa", typeof(HaHa)},
             { "spawn_type", typeof(Spawn_Type) },
@@ -44,6 +45,7 @@ namespace Foundations.Excels
             { "dict<string,int>", typeof(Dictionary<string, int>) },
             { "dict<uint,float>", typeof(Dictionary<uint, float>) },
             { "dict<uint,int>", typeof(Dictionary<uint, int>) },
+            { "dict<string,string>", typeof(Dictionary<string, string>) },
         };
 
 
@@ -63,7 +65,7 @@ namespace Foundations.Excels
             {
                 ret ??= Activator.CreateInstance(type, obj);
             }
-            
+
             return ret;
         }
 
@@ -99,7 +101,7 @@ namespace Foundations.Excels
                 var _d = (double)obj;
                 str = _d.ToString();
             }
-            
+
             List<uint> ret = new();
 
             var strs = str.Split(';');
@@ -319,6 +321,20 @@ namespace Foundations.Excels
         }
 
 
+        static (string, int) converter_tuple_string_int(object obj)
+        {
+            if (obj == null) return default;
+
+            var str = (string)obj;
+            (string, int) ret = new();
+
+            var strs = str.Split('~');
+            ret = (strs[0], int.Parse(strs[1]));
+
+            return ret;
+        }
+
+
         static Dictionary<Slot_Type, (string, string)> converter_dic_slotType_tuple_string_string(object obj)
         {
             if (obj == null) return new();
@@ -397,6 +413,27 @@ namespace Foundations.Excels
                 var value = item[1];
 
                 ret.Add(uint.Parse(key), int.Parse(value));
+            }
+
+            return ret;
+        }
+
+
+        static Dictionary<string, string> converter_dic_string_string(object obj)
+        {
+            if (obj == null) return new();
+
+            var str = (string)obj;
+            Dictionary<string, string> ret = new();
+
+            var strs = str.Split(';');
+            foreach (var items in strs)
+            {
+                var item = items.Split('=');
+                var key = item[0];
+                var value = item[1];
+
+                ret.Add(key, value);
             }
 
             return ret;

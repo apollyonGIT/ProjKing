@@ -19,37 +19,17 @@ namespace AutoCodes
         
         public string name = "";
         
-        public string sub_table_name = "";
-        
-        public string sub_table_key = "";
-        
-        public string SE_attack = "";
-        
         public int hp;
         
         public int def;
         
         public float mass;
         
-        public int basic_atk;
-        
-        public float ignite;
+        public int atk;
         
         public string monster_view = "";
         
         public string monster_behaviour_tree = "";
-        
-        public int fire_logic;
-        
-        public float feedback;
-        
-        public System.Collections.Generic.Dictionary<uint, float> loot_list;
-        
-        public System.Collections.Generic.List<string> death_vfx;
-        
-        public System.Collections.Generic.List<uint> component;
-        
-        public System.Collections.Generic.Dictionary<string, int> sub_monsters;
         
         public object diy_obj;
     }

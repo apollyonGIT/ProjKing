@@ -7,6 +7,8 @@ namespace Battles
     {
         public bool is_ban_player_input;
 
+        public bool is_player_seckill;
+
         //==================================================================================================
 
         public void attach()

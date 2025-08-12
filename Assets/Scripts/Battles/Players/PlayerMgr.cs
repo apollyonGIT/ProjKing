@@ -1,5 +1,4 @@
-﻿using Commons;
-using Foundations;
+﻿using Foundations;
 using UnityEngine;
 
 namespace Battles.Players
@@ -62,7 +61,7 @@ namespace Battles.Players
             ref var pos = ref cell.pos;
             pos.x += 1;
 
-            pos.x = Mathf.Min(pos.x, GameContext.instance.plots_count - 1);
+            pos.x = Mathf.Min(pos.x, BattleContext.instance.plots_count - 1);
         }
 
 

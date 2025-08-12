@@ -9,6 +9,10 @@ namespace Battles
 
         public bool is_player_seckill;
 
+        //战场
+        public int plots_count;
+        public float plots_mid_pos_x;
+
         //==================================================================================================
 
         public void attach()

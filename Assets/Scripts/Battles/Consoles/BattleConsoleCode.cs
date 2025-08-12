@@ -1,4 +1,5 @@
 ﻿using Commons;
+using Foundations;
 using UnityEngine;
 using static Commons.Attributes;
 
@@ -25,8 +26,26 @@ namespace Battles.Consoles
             else
                 Debug.Log("whosyourdaddy，已取消");
         }
-        
 
+
+        [Detail("【添加蝙蝠】m1")]
+        public static void m1()
+        {
+            Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
+            
+            var pd = mgr.pd;
+            pd.cell(201101u);
+        }
+
+
+        [Detail("【添加洞穴人】m2")]
+        public static void m2()
+        {
+            Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
+
+            var pd = mgr.pd;
+            pd.cell(201102u);
+        }
     }
 }
 

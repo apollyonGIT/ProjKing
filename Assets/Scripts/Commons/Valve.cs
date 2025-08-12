@@ -10,7 +10,6 @@ namespace Commons
         public static void on_init_game()
         {
             Share_DS._init();
-            GameContext._init();
         }
 
 

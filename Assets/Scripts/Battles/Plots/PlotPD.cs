@@ -33,8 +33,8 @@ namespace Battles.Plots
                 cell.add_view(view);
             }
 
-            BattleSceneRoot.instance.mainCamera.transform.localPosition = m_mid_pos;
-            GameContext.instance.plots_count = counts;
+            BattleContext.instance.plots_count = counts;
+            BattleContext.instance.plots_mid_pos_x = m_mid_pos.x;
         }
 
 

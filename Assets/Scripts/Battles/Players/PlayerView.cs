@@ -13,8 +13,7 @@ namespace Battles.Players
         {
             this.owner = owner;
 
-            transform.localPosition = owner.view_pos;
-            transform.localScale = new(owner.flipX, 1, 1);
+            calc_transform();
         }
 
 
@@ -25,6 +24,12 @@ namespace Battles.Players
 
 
         void IPlayerView.notify_on_tick1()
+        {
+            calc_transform();
+        }
+
+
+        void calc_transform()
         {
             transform.localPosition = owner.view_pos;
             transform.localScale = new(owner.flipX, 1, 1);

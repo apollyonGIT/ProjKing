@@ -32,9 +32,9 @@ namespace Battles.Consoles
         public static void m1()
         {
             Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
-            
+
             var pd = mgr.pd;
-            pd.cell(201101u);
+            var cell = pd.cell(201101u, new(2, 0), Vector2.right);
         }
 
 
@@ -44,7 +44,7 @@ namespace Battles.Consoles
             Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
 
             var pd = mgr.pd;
-            pd.cell(201102u);
+            pd.cell(201102u, new(0, 0), Vector2.left);
         }
     }
 }

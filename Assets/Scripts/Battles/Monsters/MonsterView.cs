@@ -16,6 +16,8 @@ namespace Battles.Monsters
         void IModelView<Monster>.attach(Monster owner)
         {
             this.owner = owner;
+
+            calc_transform();
         }
 
 
@@ -27,10 +29,19 @@ namespace Battles.Monsters
 
         void IMonsterView.notify_on_tick1()
         {
+            calc_transform();
+
             if (anim != null)
             {
                 anim.Update(Config.PHYSICS_TICK_DELTA_TIME);
             }
+        }
+
+
+        void calc_transform()
+        {
+            transform.localPosition = owner.view_pos;
+            transform.localScale = new(owner.flipX, 1, 1);
         }
     }
 }

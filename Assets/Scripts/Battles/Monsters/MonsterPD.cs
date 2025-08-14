@@ -1,4 +1,5 @@
 ﻿using Foundations;
+using UnityEngine;
 
 namespace Battles.Monsters
 {
@@ -21,9 +22,10 @@ namespace Battles.Monsters
         }
 
 
-        public Monster cell(uint uid)
+        public Monster cell(uint uid, Vector2 pos, Vector2 dir)
         {
-            Monster cell = new(uid);
+            Monster cell = new(uid, pos, dir);
+
             mgr.cells.Add(cell.GUID, cell);
 
             Addrs.Addressable_Utility.try_load_asset<MonsterView>(cell._desc.monster_view, out var model_view);

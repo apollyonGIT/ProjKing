@@ -1,7 +1,5 @@
 ﻿using Battles.Players;
-using Commons;
 using Foundations;
-using System.Linq;
 using UnityEngine;
 
 namespace Battles
@@ -42,6 +40,7 @@ namespace Battles
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
+            Helpers.TurnHelper.enter_next_turn();
         }
     }
 }

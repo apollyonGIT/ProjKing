@@ -1,9 +1,10 @@
 ﻿using Foundations.MVVM;
 using UnityEngine;
+using static Battles.Indicators.Action_Line_Controller;
 
 namespace Battles.Players
 {
-    public class PlayerView : MonoBehaviour, IPlayerView
+    public class PlayerView : MonoBehaviour, IPlayerView, IAction_Line_View
     {
         Player owner;
 

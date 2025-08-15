@@ -24,12 +24,14 @@ namespace Battles.Players
 
         public override void call()
         {
-            var ts = Helpers.QueryHelper.query_full_pos();
+            var ts = Helpers.QueryHelper.query_player_pos();
 
-            foreach (var t in ts)
-            {
-                Debug.Log(t);
-            }
+            //foreach (var t in ts)
+            //{
+            //    Debug.Log(t);
+            //}
+
+            Debug.Log(ts);
         }
 
 

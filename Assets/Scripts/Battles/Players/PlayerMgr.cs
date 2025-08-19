@@ -84,5 +84,11 @@ namespace Battles.Players
 
             cell.add_action_line("acti_turn_around");
         }
+
+
+        public void defense()
+        {
+            cell.add_action_line("acti_defense");
+        }
     }
 }

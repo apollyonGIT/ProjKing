@@ -44,11 +44,12 @@ namespace Battles
         }
 
 
-        public void OnWait()
+        public void OnDefense()
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
-            Helpers.TurnHelper.enter_next_turn();
+            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
+            mgr.defense();
         }
     }
 }

@@ -29,22 +29,28 @@ namespace Battles.Consoles
 
 
         [Detail("【添加蝙蝠】m1")]
-        public static void m1()
+        public static void m1(string _pos_x, string _dir_x)
         {
+            Vector2 pos = new(float.Parse(_pos_x), 0);
+            Vector2 dir = new(float.Parse(_dir_x), 0);
+
             Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
 
             var pd = mgr.pd;
-            pd.cell(201101u, new(0, 0), Vector2.right);
+            pd.cell(201101u, pos, dir);
         }
 
 
         [Detail("【添加洞穴人】m2")]
-        public static void m2()
+        public static void m2(string _pos_x, string _dir_x)
         {
+            Vector2 pos = new(float.Parse(_pos_x), 0);
+            Vector2 dir = new(float.Parse(_dir_x), 0);
+
             Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
 
             var pd = mgr.pd;
-            pd.cell(201102u, new(2, 0), Vector2.left);
+            pd.cell(201102u, pos, dir);
         }
     }
 }

@@ -1,12 +1,19 @@
-﻿using Foundations.MVVM;
+﻿using System;
+using System.Linq;
+using Foundations.MVVM;
 using UnityEngine;
-using static Battles.Indicators.Action_Line_Controller;
+using static Battles.Indicators.ActionLineController;
 
 namespace Battles.Players
 {
-    public class PlayerView : MonoBehaviour, IPlayerView, IAction_Line_View
+    public class PlayerView : MonoBehaviour, IPlayerView, IActionLineAttacher
     {
         Player owner;
+
+        #region IAction_Line_View
+        Action<string[]> m_action_line_change;
+        Action<string[]> IActionLineAttacher.action_line_change { get => m_action_line_change; set => m_action_line_change = value; }
+        #endregion
 
         //==================================================================================================
 
@@ -34,6 +41,12 @@ namespace Battles.Players
         {
             transform.localPosition = owner.view_pos;
             transform.localScale = new(owner.flipX, 1, 1);
+        }
+
+
+        void IPlayerView.notify_on_action_line_change()
+        {
+            m_action_line_change?.Invoke(owner.action_lines.ToArray());
         }
     }
 }

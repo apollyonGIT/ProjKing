@@ -58,10 +58,13 @@ namespace Battles.Players
 
         public void move_forward()
         {
-            ref var pos = ref cell.pos;
-            pos.x += 1;
+            //ref var pos = ref cell.pos;
+            //pos.x += 1;
 
-            pos.x = Mathf.Min(pos.x, BattleContext.instance.plots_count - 1);
+            //pos.x = Mathf.Min(pos.x, BattleContext.instance.plots_count - 1);
+
+            cell.action_lines.AddLast("acti_move_forward");
+            cell.action_line_change();
         }
 
 

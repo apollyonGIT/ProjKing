@@ -1,5 +1,5 @@
-﻿using Commons;
-using Foundations;
+﻿using System.Collections.Generic;
+using Commons;
 using Foundations.MVVM;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ namespace Battles.Players
     public interface IPlayerView : IModelView<Player>
     {
         void notify_on_tick1();
+        void notify_on_action_line_change();
     }
 
 
@@ -18,6 +19,8 @@ namespace Battles.Players
 
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;
+
+        public LinkedList<string> action_lines = new();
 
         //==================================================================================================
 
@@ -32,6 +35,15 @@ namespace Battles.Players
             foreach (var view in views)
             {
                 view.notify_on_tick1();
+            }
+        }
+
+
+        public void action_line_change()
+        {
+            foreach (var view in views)
+            {
+                view.notify_on_action_line_change();
             }
         }
     }

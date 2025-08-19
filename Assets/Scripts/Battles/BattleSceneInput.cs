@@ -9,21 +9,29 @@ namespace Battles
 
         //==================================================================================================
 
-        public void OnMoveBack()
+        public void OnMoveLeft()
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.move_back();
+
+            if (mgr.cell.dir == Vector2.right)
+                mgr.move_back();
+            else
+                mgr.move_forward();
         }
 
 
-        public void OnMoveForward()
+        public void OnMoveRight()
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.move_forward();
+
+            if (mgr.cell.dir == Vector2.right)
+                mgr.move_forward();
+            else
+                mgr.move_back();
         }
 
 

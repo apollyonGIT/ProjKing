@@ -63,23 +63,26 @@ namespace Battles.Players
 
             //pos.x = Mathf.Min(pos.x, BattleContext.instance.plots_count - 1);
 
-            cell.action_lines.AddLast("acti_move_forward");
-            cell.action_line_change();
+            cell.add_action_line("acti_move_forward");
         }
 
 
         public void move_back()
         {
-            ref var pos = ref cell.pos;
-            pos.x -= 1;
+            //ref var pos = ref cell.pos;
+            //pos.x -= 1;
 
-            pos.x = Mathf.Max(pos.x, 0);
+            //pos.x = Mathf.Max(pos.x, 0);
+
+            cell.add_action_line("acti_move_back");
         }
 
 
         public void turn_around()
         {
-            cell.dir *= -1;
+            //cell.dir *= -1;
+
+            cell.add_action_line("acti_turn_around");
         }
     }
 }

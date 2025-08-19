@@ -20,7 +20,8 @@ namespace Battles.Players
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;
 
-        public LinkedList<string> action_lines = new();
+        LinkedList<string> m_action_lines = new();
+        public LinkedList<string> action_lines => m_action_lines;
 
         //==================================================================================================
 
@@ -39,8 +40,13 @@ namespace Battles.Players
         }
 
 
-        public void action_line_change()
+        public void add_action_line(string action_line)
         {
+            //规则：行动格最多3个
+            if (m_action_lines.Count == 3) return;
+
+            m_action_lines.AddLast(action_line);
+
             foreach (var view in views)
             {
                 view.notify_on_action_line_change();

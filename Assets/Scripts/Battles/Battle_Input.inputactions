@@ -6,7 +6,7 @@
             "id": "c3c6cdb8-80a7-4a51-8909-9d90416a2081",
             "actions": [
                 {
-                    "name": "MoveBack",
+                    "name": "MoveLeft",
                     "type": "Button",
                     "id": "0af7574a-3497-452c-9587-5aff931c098b",
                     "expectedControlType": "Button",
@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveForward",
+                    "name": "MoveRight",
                     "type": "Button",
                     "id": "6277a419-1194-42f5-8451-d8ea2af3dea4",
                     "expectedControlType": "Button",
@@ -59,7 +59,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveBack",
+                    "action": "MoveLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -70,7 +70,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveForward",
+                    "action": "MoveRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

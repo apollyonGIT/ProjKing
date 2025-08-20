@@ -14,6 +14,49 @@ namespace Battles.Indicators
 
         //==================================================================================================
 
+        public void add_action_line(string action_line)
+        {
+            //规则：行动格最多3个
+            if (action_lines.Count == 3) return;
+
+            action_lines.AddLast(action_line);
+            refresh_action_line();
+        }
+
+
+        public void remove_action_line(string action_line)
+        {
+            action_lines.Remove(action_line);
+            refresh_action_line();
+        }
+
+
+        void refresh_action_line();
+
+
+        //==================================================================================================
+
+        void cast()
+        {
+            var count = action_lines.Count;
+            var i = 0;
+
+            while (i < count)
+            {
+                Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
+                i++;
+
+                #region 子函数 do_cast
+                void do_cast(Request req)
+                {
+                    typeof(IActionLine).GetMethod(action_lines.First())?.Invoke(this, null);
+                    remove_action_line(action_lines.First());
+                }
+                #endregion
+            }
+        }
+
+
         void acti_move_forward()
         {
             var x = pos.x;
@@ -45,49 +88,6 @@ namespace Battles.Indicators
 
         }
 
-
-        void cast()
-        {
-            var count = action_lines.Count;
-            var i = 0;
-
-            while (i < count)
-            {
-                Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
-                i++;
-
-                #region 子函数 do_cast
-                void do_cast(Request req)
-                {
-                    typeof(IActionLine).GetMethod(action_lines.First())?.Invoke(this, null);
-                    remove_action_line(action_lines.First());
-                }
-                #endregion
-            }
-        }
-
-
-        //==================================================================================================
-
-
-        public void add_action_line(string action_line)
-        {
-            //规则：行动格最多3个
-            if (action_lines.Count == 3) return;
-
-            action_lines.AddLast(action_line);
-            refresh_action_line();
-        }
-
-
-        public void remove_action_line(string action_line)
-        {
-            action_lines.Remove(action_line);
-            refresh_action_line();
-        }
-
-
-        void refresh_action_line();
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Battles.Movers;
 using Commons;
 using Foundations.MVVM;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace Battles.Players
     }
 
 
-    public class Player : Model<Player, IPlayerView>
+    public class Player : Model<Player, IPlayerView>, IMover
     {
         public Vector2 pos;
         public Vector2 view_pos => Config.current.pos_coef * pos;
@@ -22,6 +23,11 @@ namespace Battles.Players
 
         LinkedList<string> m_action_lines = new();
         public LinkedList<string> action_lines => m_action_lines;
+
+        #region IMover
+        Vector2 IMover.pos { get => pos; set => pos = value; }
+        Vector2 IMover.dir { get => dir; set => dir = value; }
+        #endregion
 
         //==================================================================================================
 
@@ -52,6 +58,46 @@ namespace Battles.Players
                 view.notify_on_action_line_change();
             }
         }
+
+
+        public void remove_action_line()
+        {
+            action_lines.RemoveFirst();
+
+            foreach (var view in views)
+            {
+                view.notify_on_action_line_change();
+            }
+        }
+
+
+        #region IMover
+        void IMover.acti_move_forward()
+        {
+            pos.x += 1 * dir.x;
+            pos.x = Mathf.Clamp(pos.x, 0, BattleContext.instance.plots_count - 1);
+        }
+
+
+        void IMover.acti_move_back()
+        {
+            pos.x -= 1 * dir.x;
+            pos.x = Mathf.Clamp(pos.x, 0, BattleContext.instance.plots_count - 1);
+        }
+
+
+        void IMover.acti_turn_around()
+        {
+            dir.x *= -1;
+        }
+
+
+        void IMover.acti_defense()
+        {
+            
+        }
+        #endregion
+
     }
 }
 

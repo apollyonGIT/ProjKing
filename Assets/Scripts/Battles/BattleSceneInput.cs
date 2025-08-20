@@ -51,6 +51,15 @@ namespace Battles
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.defense();
         }
+
+
+        public void OnCast()
+        {
+            if (BattleContext.instance.is_ban_player_input) return;
+
+            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
+            mgr.cast();
+        }
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using Foundations;
+﻿using System.Linq;
+using Foundations;
 using UnityEngine;
 
 namespace Battles.Players
@@ -58,30 +59,18 @@ namespace Battles.Players
 
         public void move_forward()
         {
-            //ref var pos = ref cell.pos;
-            //pos.x += 1;
-
-            //pos.x = Mathf.Min(pos.x, BattleContext.instance.plots_count - 1);
-
             cell.add_action_line("acti_move_forward");
         }
 
 
         public void move_back()
         {
-            //ref var pos = ref cell.pos;
-            //pos.x -= 1;
-
-            //pos.x = Mathf.Max(pos.x, 0);
-
             cell.add_action_line("acti_move_back");
         }
 
 
         public void turn_around()
         {
-            //cell.dir *= -1;
-
             cell.add_action_line("acti_turn_around");
         }
 
@@ -89,6 +78,19 @@ namespace Battles.Players
         public void defense()
         {
             cell.add_action_line("acti_defense");
+        }
+
+
+        public void cast()
+        {
+            var action_lines = cell.action_lines;
+
+            while (action_lines.Any())
+            {
+                typeof(Movers.IMover).GetMethod(action_lines.First())?.Invoke(cell, null);
+
+                cell.remove_action_line();
+            }
         }
     }
 }

@@ -3,15 +3,16 @@ using UnityEngine;
 
 namespace Battles.Indicators
 {
+    public interface IActionLineAttacherView
+    {
+        Action<string[]> action_line_change { get; set; }
+    }
+
+
     public class ActionLineController : MonoBehaviour
     {
-        public interface IActionLineAttacher
-        {
-            Action<string[]> action_line_change { get; set; }
-        }
-
         public GameObject attacher;
-        IActionLineAttacher m_attacher;
+        IActionLineAttacherView m_attacher;
 
         public ActionLineView[] sub_views; 
 

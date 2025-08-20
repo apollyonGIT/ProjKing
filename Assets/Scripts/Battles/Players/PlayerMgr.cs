@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Battles.Indicators;
 using Foundations;
 using Foundations.Tickers;
 using UnityEngine;
@@ -96,7 +97,7 @@ namespace Battles.Players
                 #region 子函数 do_cast
                 void do_cast(Request req)
                 {
-                    typeof(Movers.IMover).GetMethod(action_lines.First())?.Invoke(cell, null);
+                    typeof(IActionLineAttacher).GetMethod(action_lines.First())?.Invoke(cell, null);
                     cell.remove_action_line();
                 }
                 #endregion

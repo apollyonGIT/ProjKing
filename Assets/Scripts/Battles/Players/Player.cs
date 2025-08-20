@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Battles.Movers;
+using Battles.Indicators;
 using Commons;
 using Foundations.MVVM;
 using UnityEngine;
@@ -13,7 +13,7 @@ namespace Battles.Players
     }
 
 
-    public class Player : Model<Player, IPlayerView>, IMover
+    public class Player : Model<Player, IPlayerView>, IActionLineAttacher
     {
         public Vector2 pos;
         public Vector2 view_pos => Config.current.pos_coef * pos;
@@ -25,8 +25,8 @@ namespace Battles.Players
         public LinkedList<string> action_lines => m_action_lines;
 
         #region IMover
-        Vector2 IMover.pos { get => pos; set => pos = value; }
-        Vector2 IMover.dir { get => dir; set => dir = value; }
+        Vector2 IActionLineAttacher.pos { get => pos; set => pos = value; }
+        Vector2 IActionLineAttacher.dir { get => dir; set => dir = value; }
         #endregion
 
         //==================================================================================================

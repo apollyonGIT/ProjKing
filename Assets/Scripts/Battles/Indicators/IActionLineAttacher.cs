@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Battles.Movers
+namespace Battles.Indicators
 {
-    public interface IMover
+    public interface IActionLineAttacher
     {
         Vector2 pos { get; set; }
         Vector2 dir { get; set; }

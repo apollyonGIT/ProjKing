@@ -2,17 +2,17 @@
 using System.Linq;
 using Foundations.MVVM;
 using UnityEngine;
-using static Battles.Indicators.ActionLineController;
+using Battles.Indicators;
 
 namespace Battles.Players
 {
-    public class PlayerView : MonoBehaviour, IPlayerView, IActionLineAttacher
+    public class PlayerView : MonoBehaviour, IPlayerView, IActionLineAttacherView
     {
         Player owner;
 
         #region IAction_Line_View
         Action<string[]> m_action_line_change;
-        Action<string[]> IActionLineAttacher.action_line_change { get => m_action_line_change; set => m_action_line_change = value; }
+        Action<string[]> IActionLineAttacherView.action_line_change { get => m_action_line_change; set => m_action_line_change = value; }
         #endregion
 
         //==================================================================================================

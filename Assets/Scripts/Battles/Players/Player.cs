@@ -70,34 +70,6 @@ namespace Battles.Players
             }
         }
 
-
-        #region IMover
-        void IMover.acti_move_forward()
-        {
-            pos.x += 1 * dir.x;
-            pos.x = Mathf.Clamp(pos.x, 0, BattleContext.instance.plots_count - 1);
-        }
-
-
-        void IMover.acti_move_back()
-        {
-            pos.x -= 1 * dir.x;
-            pos.x = Mathf.Clamp(pos.x, 0, BattleContext.instance.plots_count - 1);
-        }
-
-
-        void IMover.acti_turn_around()
-        {
-            dir.x *= -1;
-        }
-
-
-        void IMover.acti_defense()
-        {
-            
-        }
-        #endregion
-
     }
 }
 

@@ -9,13 +9,36 @@ namespace Battles.Movers
 
         //==================================================================================================
 
-        void acti_move_forward();
+        void acti_move_forward()
+        {
+            var x = pos.x;
 
-        void acti_move_back();
+            x += 1 * dir.x;
+            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
+            pos = new(x, pos.y);
+        }
 
-        void acti_turn_around();
 
-        void acti_defense();
+        void acti_move_back()
+        {
+            var x = pos.x;
+
+            x -= 1 * dir.x;
+            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
+            pos = new(x, pos.y);
+        }
+
+
+        void acti_turn_around()
+        {
+            dir = new(-dir.x, dir.y);
+        }
+
+
+        void acti_defense()
+        {
+
+        }
     }
 }
 

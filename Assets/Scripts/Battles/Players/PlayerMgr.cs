@@ -1,8 +1,4 @@
-﻿using System.Linq;
-using Battles.Indicators;
-using Foundations;
-using Foundations.Tickers;
-using UnityEngine;
+﻿using Foundations;
 
 namespace Battles.Players
 {
@@ -61,47 +57,31 @@ namespace Battles.Players
 
         public void move_forward()
         {
-            cell.add_action_line("acti_move_forward");
+            cell.actionLine.add_action_line("acti_move_forward");
         }
 
 
         public void move_back()
         {
-            cell.add_action_line("acti_move_back");
+            cell.actionLine.add_action_line("acti_move_back");
         }
 
 
         public void turn_around()
         {
-            cell.add_action_line("acti_turn_around");
+            cell.actionLine.add_action_line("acti_turn_around");
         }
 
 
         public void defense()
         {
-            cell.add_action_line("acti_defense");
+            cell.actionLine.add_action_line("acti_defense");
         }
 
 
         public void cast()
         {
-            var action_lines = cell.action_lines;
-            var count = action_lines.Count;
-            var i = 0;
-
-            while (i < count)
-            {
-                Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
-                i++;
-
-                #region 子函数 do_cast
-                void do_cast(Request req)
-                {
-                    typeof(IActionLineAttacher).GetMethod(action_lines.First())?.Invoke(cell, null);
-                    cell.remove_action_line();
-                }
-                #endregion
-            }
+            cell.actionLine.cast();
         }
     }
 }

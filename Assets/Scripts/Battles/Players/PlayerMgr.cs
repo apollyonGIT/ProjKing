@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Foundations;
+using Foundations.Tickers;
 using UnityEngine;
 
 namespace Battles.Players
@@ -84,12 +85,21 @@ namespace Battles.Players
         public void cast()
         {
             var action_lines = cell.action_lines;
+            var count = action_lines.Count;
+            var i = 0;
 
-            while (action_lines.Any())
+            while (i < count)
             {
-                typeof(Movers.IMover).GetMethod(action_lines.First())?.Invoke(cell, null);
+                Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
+                i++;
 
-                cell.remove_action_line();
+                #region 子函数 do_cast
+                void do_cast(Request req)
+                {
+                    typeof(Movers.IMover).GetMethod(action_lines.First())?.Invoke(cell, null);
+                    cell.remove_action_line();
+                }
+                #endregion
             }
         }
     }

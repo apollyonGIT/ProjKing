@@ -1,4 +1,5 @@
 ﻿using Foundations.MVVM;
+using System;
 using UnityEngine;
 
 namespace #namespace#
@@ -6,6 +7,9 @@ namespace #namespace#
     public class #cell#View : MonoBehaviour, I#cell#View
     {
         #cell# owner;
+
+        Action<object> IModelView.tick1 { get => m_tick1_ac; set => m_tick1_ac = value; }
+        Action<object> m_tick1_ac;
 
         //==================================================================================================
 
@@ -23,6 +27,7 @@ namespace #namespace#
 
         void I#cell#View.notify_on_tick1()
         {
+            m_tick1_ac?.Invoke(owner);
         }
     }
 }

@@ -38,8 +38,12 @@ namespace Battles.Indicators
         void cast()
         {
             var count = action_lines.Count;
-            var i = 0;
 
+            var ctx = BattleContext.instance;
+            ctx.is_ban_player_input = true;
+            Request_Helper.delay_do($"cancel_ban_player_input", count * 30, (_) => { ctx.is_ban_player_input = false; });
+
+            var i = 0;
             while (i < count)
             {
                 Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);

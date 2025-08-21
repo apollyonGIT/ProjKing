@@ -33,18 +33,30 @@ namespace Battles.Indicators
         }
 
 
+        void merge_action_line()
+        {
+            
+        }
+
+
         //==================================================================================================
 
         void cast()
         {
             var count = action_lines.Count;
 
+            //冻结输入
             var ctx = BattleContext.instance;
             ctx.is_ban_player_input = true;
             Request_Helper.delay_do($"cancel_ban_player_input", count * 30, (_) => { ctx.is_ban_player_input = false; });
 
-            var i = 0;
-            while (i < count)
+            //合成行动块
+            var can_merge = false;
+            merge_action_line();
+
+            //执行行动块
+            var i = can_merge ? 1 : 0;
+            while (i <= count)
             {
                 Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
                 i++;
@@ -70,11 +82,31 @@ namespace Battles.Indicators
         }
 
 
+        void acti_move_right2()
+        {
+            var x = pos.x;
+
+            x += 2;
+            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
+            pos = new(x, pos.y);
+        }
+
+
         void acti_move_left()
         {
             var x = pos.x;
 
             x--;
+            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
+            pos = new(x, pos.y);
+        }
+
+
+        void acti_move_left2()
+        {
+            var x = pos.x;
+
+            x -= 2;
             x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
             pos = new(x, pos.y);
         }
@@ -87,6 +119,12 @@ namespace Battles.Indicators
 
 
         void acti_attack()
+        {
+
+        }
+
+
+        void acti_attack2()
         {
 
         }

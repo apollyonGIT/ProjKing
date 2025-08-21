@@ -10,10 +10,6 @@ namespace Battles.Players
     public interface IPlayerView : IModelView<Player>
     {
         void notify_on_tick1();
-
-        #region IMover
-        void notify_on_refresh_action_line(string[] action_line_array);
-        #endregion
     }
 
 
@@ -32,6 +28,9 @@ namespace Battles.Players
         LinkedList<string> IActionLine.action_lines { get => m_action_lines; set => m_action_lines = value; }
         LinkedList<string> m_action_lines = new();
 
+        ActionLineController m_actionLineController;
+        ActionLineController IActionLine.actionLineController { get => m_actionLineController; set => m_actionLineController = value; }
+
         public IActionLine actionLine => this;
         #endregion
 
@@ -48,15 +47,6 @@ namespace Battles.Players
             foreach (var view in views)
             {
                 view.notify_on_tick1();
-            }
-        }
-
-
-        void IActionLine.refresh_action_line()
-        {
-            foreach (var view in views)
-            {
-                view.notify_on_refresh_action_line(actionLine.action_lines.ToArray());
             }
         }
     }

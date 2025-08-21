@@ -15,6 +15,7 @@ namespace Battles.Players
         void IModelView<Player>.attach(Player owner)
         {
             this.owner = owner;
+            (owner as IActionLine).actionLineController = actionLineController;
 
             calc_transform();
         }
@@ -38,12 +39,6 @@ namespace Battles.Players
             transform.localScale = new(owner.flipX, 1, 1);
 
             actionLineController.transform.localScale = new(owner.flipX * 0.9f, 0.9f, 1);
-        }
-
-
-        void IPlayerView.notify_on_refresh_action_line(string[] action_line_array)
-        {
-            actionLineController.do_refresh(action_line_array);
         }
     }
 }

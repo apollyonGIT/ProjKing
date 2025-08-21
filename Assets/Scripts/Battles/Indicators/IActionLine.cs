@@ -11,6 +11,7 @@ namespace Battles.Indicators
         Vector2 dir { get; set; }
 
         LinkedList<string> action_lines { get; set; }
+        ActionLineController actionLineController { get; set; }
 
         //==================================================================================================
 
@@ -31,7 +32,10 @@ namespace Battles.Indicators
         }
 
 
-        void refresh_action_line();
+        void refresh_action_line()
+        {
+            actionLineController.do_refresh(action_lines.ToArray());
+        }
 
 
         //==================================================================================================

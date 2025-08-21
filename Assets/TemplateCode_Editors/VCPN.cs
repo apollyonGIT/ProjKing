@@ -2,13 +2,13 @@
 
 namespace Editor.AutoCreators
 {
-    public class View
+    public class VCPN
     {
-        static string path = "Assets/TemplateCode_Editors/Templates/View_Template.cs.txt";
+        static string path = "Assets/TemplateCode_Editors/Templates/VCPN_Template.cs.txt";
 
         //==================================================================================================
 
-        [MenuItem("Assets/TemplateCode/View", false, -1)]
+        [MenuItem("Assets/TemplateCode/VCPN", false, -1)]
         public static void EXE()
         {
             CreateScriptByTemplate.EXE(path, create_file_name, create_diy_fields);
@@ -17,7 +17,7 @@ namespace Editor.AutoCreators
 
         static string create_file_name(string folder_name)
         {
-            return $"{Cell.create_file_name(folder_name)}View";
+            return $"{Cell.create_file_name(folder_name)}VCPN";
         }
 
 

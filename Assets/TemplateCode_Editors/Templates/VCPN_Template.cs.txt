@@ -1,0 +1,32 @@
+﻿using Foundations.MVVM;
+using UnityEngine;
+
+namespace #namespace#
+{
+    public class #cell#VCPN : MonoBehaviour
+    {
+        public GameObject attacher_mono;
+        IModelView m_attacher_view;
+
+        //==================================================================================================
+
+        private void OnEnable()
+        {
+            attacher_mono.TryGetComponent(out m_attacher_view);
+            m_attacher_view.tick1 += tick1;
+        }
+
+
+        private void OnDisable()
+        {
+            m_attacher_view.tick1 -= tick1;
+        }
+
+
+        public void tick1(object _attacher)
+        {
+        }
+
+    }
+}
+

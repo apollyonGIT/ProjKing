@@ -33,12 +33,6 @@ namespace Battles.Indicators
         }
 
 
-        //void refresh_action_line()
-        //{
-        //    actionLineController.do_refresh(action_lines.ToArray());
-        //}
-
-
         //==================================================================================================
 
         void cast()

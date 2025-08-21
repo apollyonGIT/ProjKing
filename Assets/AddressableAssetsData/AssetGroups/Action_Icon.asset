@@ -28,7 +28,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef5b2ee91bfcc3d4684b301dac475c9c
-    m_Address: acti_move_forward
+    m_Address: acti_move_right
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

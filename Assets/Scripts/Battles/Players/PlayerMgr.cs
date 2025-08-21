@@ -55,15 +55,15 @@ namespace Battles.Players
         }
 
 
-        public void move_forward()
+        public void move_right()
         {
-            cell.actionLine.add_action_line("acti_move_forward");
+            cell.actionLine.add_action_line("acti_move_right");
         }
 
 
-        public void move_back()
+        public void move_left()
         {
-            cell.actionLine.add_action_line("acti_move_back");
+            cell.actionLine.add_action_line("acti_move_left");
         }
 
 

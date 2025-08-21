@@ -36,6 +36,8 @@ namespace Battles.Players
         {
             transform.localPosition = owner.view_pos;
             transform.localScale = new(owner.flipX, 1, 1);
+
+            actionLineController.transform.localScale = new(owner.flipX * 0.9f, 0.9f, 1);
         }
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657002145503300767}
   m_Layer: 0
-  m_Name: acti_move_back
+  m_Name: acti_move_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

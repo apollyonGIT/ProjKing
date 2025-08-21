@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.Linq;
 using Foundations.Tickers;
 using UnityEngine;
@@ -16,7 +16,7 @@ namespace Battles.Indicators
 
         public void add_action_line(string action_line)
         {
-            //¹æÔò£ºĞĞ¶¯¸ñ×î¶à3¸ö
+            //è§„åˆ™ï¼šè¡ŒåŠ¨æ ¼æœ€å¤š3ä¸ª
             if (action_lines.Count == 3) return;
 
             action_lines.AddLast(action_line);
@@ -46,7 +46,7 @@ namespace Battles.Indicators
                 Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
                 i++;
 
-                #region ×Óº¯Êı do_cast
+                #region å­å‡½æ•° do_cast
                 void do_cast(Request req)
                 {
                     typeof(IActionLine).GetMethod(action_lines.First())?.Invoke(this, null);
@@ -57,21 +57,21 @@ namespace Battles.Indicators
         }
 
 
-        void acti_move_forward()
+        void acti_move_right()
         {
             var x = pos.x;
 
-            x += 1 * dir.x;
+            x++;
             x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
             pos = new(x, pos.y);
         }
 
 
-        void acti_move_back()
+        void acti_move_left()
         {
             var x = pos.x;
 
-            x -= 1 * dir.x;
+            x--;
             x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
             pos = new(x, pos.y);
         }

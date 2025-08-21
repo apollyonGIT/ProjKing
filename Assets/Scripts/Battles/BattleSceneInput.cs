@@ -15,10 +15,7 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
 
-            if (mgr.cell.dir == Vector2.right)
-                mgr.move_back();
-            else
-                mgr.move_forward();
+            mgr.move_left();
         }
 
 
@@ -28,10 +25,7 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
 
-            if (mgr.cell.dir == Vector2.right)
-                mgr.move_forward();
-            else
-                mgr.move_back();
+            mgr.move_right();
         }
 
 

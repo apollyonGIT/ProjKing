@@ -29,12 +29,12 @@ namespace Battles
         }
 
 
-        public void OnTurnAround()
+        public void OnDoubleAC()
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.turn_around();
+            mgr.double_ac();
         }
 
 

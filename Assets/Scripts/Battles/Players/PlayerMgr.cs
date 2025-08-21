@@ -67,9 +67,9 @@ namespace Battles.Players
         }
 
 
-        public void turn_around()
+        public void double_ac()
         {
-            cell.actionLine.add_action_line("acti_turn_around");
+            cell.actionLine.add_action_line("acti_double_ac");
         }
 
 

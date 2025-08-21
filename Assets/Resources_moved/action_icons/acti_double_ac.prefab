@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657002145503300767}
   m_Layer: 0
-  m_Name: acti_turn_around
+  m_Name: acti_double_ac
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6a0980bafaca1f14f931985fa3018b28, type: 3}
+      objectReference: {fileID: 21300000, guid: 1e37bc8862959bd409eda2101b9d0a1c, type: 3}
     - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
       propertyPath: m_Color.b
       value: 0

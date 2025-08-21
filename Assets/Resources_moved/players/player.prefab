@@ -152,14 +152,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 4584139771254148372}
     m_Modifications:
     - target: {fileID: 111779388779091053, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 111779388779091053, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 111779388779091053, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -204,15 +196,7 @@ PrefabInstance:
       value: action_line
       objectReference: {fileID: 0}
     - target: {fileID: 4666069323087289522, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
-      propertyPath: attacher
-      value: 
-      objectReference: {fileID: 1213167264332204547}
-    - target: {fileID: 4666069323087289522, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
       propertyPath: attacher_mono
-      value: 
-      objectReference: {fileID: 1213167264332204547}
-    - target: {fileID: 4666069323087289522, guid: b017ee83ffdfaa24c9351b7af669136e, type: 3}
-      propertyPath: attacher_view
       value: 
       objectReference: {fileID: 1213167264332204547}
     m_RemovedComponents: []

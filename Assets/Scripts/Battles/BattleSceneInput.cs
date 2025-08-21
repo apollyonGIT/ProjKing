@@ -38,12 +38,12 @@ namespace Battles
         }
 
 
-        public void OnDefense()
+        public void OnAttack()
         {
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.defense();
+            mgr.attack();
         }
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657002145503300767}
   m_Layer: 0
-  m_Name: acti_defense
+  m_Name: acti_attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,19 @@ PrefabInstance:
     - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3a93a4e81488cd5419ead9a4b84da771, type: 3}
+      objectReference: {fileID: 21300000, guid: 7c9691b31e1dccf498d193cd452259bb, type: 3}
+    - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1227655324634160180, guid: eba0c7f543a921749b7a0910c8f60a4f, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

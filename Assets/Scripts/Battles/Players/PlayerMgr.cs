@@ -73,9 +73,9 @@ namespace Battles.Players
         }
 
 
-        public void defense()
+        public void attack()
         {
-            cell.actionLine.add_action_line("acti_defense");
+            cell.actionLine.add_action_line("acti_attack");
         }
 
 

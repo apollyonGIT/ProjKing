@@ -88,7 +88,7 @@ namespace Battles.Indicators
         }
 
 
-        void acti_defense()
+        void acti_attack()
         {
 
         }

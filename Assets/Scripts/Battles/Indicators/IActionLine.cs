@@ -11,7 +11,8 @@ namespace Battles.Indicators
         Vector2 dir { get; set; }
 
         LinkedList<string> action_lines { get; set; }
-        ActionLineController actionLineController { get; set; }
+
+        bool need_refresh { get; set; }
 
         //==================================================================================================
 
@@ -21,21 +22,21 @@ namespace Battles.Indicators
             if (action_lines.Count == 3) return;
 
             action_lines.AddLast(action_line);
-            refresh_action_line();
+            need_refresh = true;
         }
 
 
         public void remove_action_line(string action_line)
         {
             action_lines.Remove(action_line);
-            refresh_action_line();
+            need_refresh = true;
         }
 
 
-        void refresh_action_line()
-        {
-            actionLineController.do_refresh(action_lines.ToArray());
-        }
+        //void refresh_action_line()
+        //{
+        //    actionLineController.do_refresh(action_lines.ToArray());
+        //}
 
 
         //==================================================================================================

@@ -1,4 +1,5 @@
 ﻿using Foundations.MVVM;
+using System;
 using UnityEngine;
 
 namespace Battles.Plots
@@ -6,6 +7,9 @@ namespace Battles.Plots
     public class PlotView : MonoBehaviour, IPlotView
     {
         Plot owner;
+
+        Action<object> IModelView.tick1 { get => m_tick1_ac; set => m_tick1_ac = value; }
+        Action<object> m_tick1_ac;
 
         //==================================================================================================
 
@@ -25,7 +29,7 @@ namespace Battles.Plots
 
         void IPlotView.notify_on_tick1()
         {
-            
+            m_tick1_ac?.Invoke(owner);
         }
     }
 }

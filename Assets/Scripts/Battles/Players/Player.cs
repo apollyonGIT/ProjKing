@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Battles.Indicators;
 using Commons;
 using Foundations.MVVM;
@@ -28,8 +27,8 @@ namespace Battles.Players
         LinkedList<string> IActionLine.action_lines { get => m_action_lines; set => m_action_lines = value; }
         LinkedList<string> m_action_lines = new();
 
-        ActionLineController m_actionLineController;
-        ActionLineController IActionLine.actionLineController { get => m_actionLineController; set => m_actionLineController = value; }
+        bool IActionLine.need_refresh { get => m_need_refresh; set => m_need_refresh = value; }
+        bool m_need_refresh;
 
         public IActionLine actionLine => this;
         #endregion

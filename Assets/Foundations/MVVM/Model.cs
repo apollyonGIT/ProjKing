@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Foundations.MVVM
@@ -35,11 +36,17 @@ namespace Foundations.MVVM
     }
 
 
-    public interface IModelView<T>
+    public interface IModelView<T> : IModelView
     {
         void attach(T owner);
 
         void detach(T owner);
+    }
+
+
+    public interface IModelView
+    {
+        Action<object> tick1 { get; set; }
     }
 }
 

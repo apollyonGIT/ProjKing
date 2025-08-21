@@ -1,21 +1,21 @@
 ﻿using Foundations.MVVM;
 using UnityEngine;
-using Battles.Indicators;
+using System;
 
 namespace Battles.Players
 {
     public class PlayerView : MonoBehaviour, IPlayerView
     {
-        public ActionLineController actionLineController;
-
         Player owner;
+
+        Action<object> IModelView.tick1 { get => m_tick1_ac; set => m_tick1_ac = value; }
+        Action<object> m_tick1_ac;
 
         //==================================================================================================
 
         void IModelView<Player>.attach(Player owner)
         {
             this.owner = owner;
-            (owner as IActionLine).actionLineController = actionLineController;
 
             calc_transform();
         }
@@ -30,6 +30,8 @@ namespace Battles.Players
         void IPlayerView.notify_on_tick1()
         {
             calc_transform();
+
+            m_tick1_ac?.Invoke(owner);
         }
 
 
@@ -37,8 +39,6 @@ namespace Battles.Players
         {
             transform.localPosition = owner.view_pos;
             transform.localScale = new(owner.flipX, 1, 1);
-
-            actionLineController.transform.localScale = new(owner.flipX * 0.9f, 0.9f, 1);
         }
     }
 }

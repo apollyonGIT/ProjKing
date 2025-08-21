@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 6ac5a5edfa270e947891fa0201e5d35d
   m_SerializeEntries:
   - m_GUID: 31423da7bc523f242b414e8c9e2c0723
-    m_Address: acti_move_back
+    m_Address: acti_move_left
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

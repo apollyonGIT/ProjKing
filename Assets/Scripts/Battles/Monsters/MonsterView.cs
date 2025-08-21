@@ -1,6 +1,7 @@
 ﻿using Commons;
 using Foundations.MVVM;
 using Spine.Unity;
+using System;
 using UnityEngine;
 
 namespace Battles.Monsters
@@ -10,6 +11,9 @@ namespace Battles.Monsters
         public SkeletonAnimation anim;
 
         Monster owner;
+
+        Action<object> IModelView.tick1 { get => m_tick1_ac; set => m_tick1_ac = value; }
+        Action<object> m_tick1_ac;
 
         //==================================================================================================
 
@@ -35,6 +39,8 @@ namespace Battles.Monsters
             {
                 anim.Update(Config.PHYSICS_TICK_DELTA_TIME);
             }
+
+            m_tick1_ac?.Invoke(owner);
         }
 
 

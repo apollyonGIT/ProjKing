@@ -33,9 +33,65 @@ namespace Battles.Indicators
         }
 
 
-        void merge_action_line()
+        bool try_merge_action_line()
         {
-            
+            if (action_lines.Count == 1) return false;
+
+            var node = action_lines.First;
+            var ret = false;
+
+            while (node != null && node.Next != null)
+            {
+                if (node.Next.Value == "acti_double_ac")
+                {
+                    if (valid_action_is_2(node.Value))
+                    {
+                        node.Next.Value = node.Value;
+
+                        ret = node.Next.Value != "acti_double_ac";
+                    }
+                    else
+                    {
+                        node.Value += "2";
+                        action_lines.Remove(node.Next);
+
+                        ret = true;
+                    }
+                }
+
+                if ((node.Value == "acti_move_right" && node.Next.Value == "acti_move_left") || (node.Value == "acti_move_left" && node.Next.Value == "acti_move_right"))
+                {
+                    node.Value = "acti_turn_around";
+                    action_lines.Remove(node.Next);
+
+                    ret = true;
+                }
+
+                node = node.Next;
+            }
+
+            need_refresh = ret;
+
+            return ret;
+
+
+            #region 子函数 valid_action_is_2
+            bool valid_action_is_2(string action_line)
+            {
+                return action_line.Contains('2') || action_line == "acti_turn_around" || action_line == "acti_double_ac";
+            }
+            #endregion
+
+
+            #region 子函数 action_to_2
+            string action_to_2(string action_line)
+            {
+                if (action_line == "acti_double_ac") 
+                    return action_line;
+
+                return action_line + "2";
+            }
+            #endregion
         }
 
 
@@ -43,22 +99,25 @@ namespace Battles.Indicators
 
         void cast()
         {
-            var count = action_lines.Count;
+            if (!action_lines.Any()) return;
 
             //冻结输入
             var ctx = BattleContext.instance;
             ctx.is_ban_player_input = true;
-            Request_Helper.delay_do($"cancel_ban_player_input", count * 30, (_) => { ctx.is_ban_player_input = false; });
+            Request_Helper.delay_do($"cancel_ban_player_input", action_lines.Count * 30, (_) => { ctx.is_ban_player_input = false; });
 
             //合成行动块
             var can_merge = false;
-            merge_action_line();
+            can_merge = try_merge_action_line();
+            Debug.Log(can_merge);
+
+            var merge_tick = can_merge ? 20 : 0;
 
             //执行行动块
-            var i = can_merge ? 1 : 0;
-            while (i <= count)
+            var i = 0;
+            while (i < action_lines.Count)
             {
-                Request_Helper.delay_do($"player_action_line_cast_{i}", i * 30, do_cast);
+                Request_Helper.delay_do($"player_action_line_cast_{i}", merge_tick + i * 30, do_cast);
                 i++;
 
                 #region 子函数 do_cast

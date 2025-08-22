@@ -14,8 +14,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-
-            mgr.move_left();
+            mgr.cell.actionLine.add_action_line("acti_move_left");
         }
 
 
@@ -24,8 +23,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-
-            mgr.move_right();
+            mgr.cell.actionLine.add_action_line("acti_move_right");
         }
 
 
@@ -34,7 +32,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.double_ac();
+            mgr.cell.actionLine.add_action_line("acti_double_ac");
         }
 
 
@@ -43,7 +41,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.attack();
+            mgr.cell.actionLine.add_action_line("acti_attack");
         }
 
 
@@ -52,7 +50,16 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cast();
+            mgr.cell.actionLine.cast();
+        }
+
+
+        public void OnDeleteAC()
+        {
+            if (BattleContext.instance.is_ban_player_input) return;
+
+            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
+            mgr.cell.actionLine.delete_ac();
         }
     }
 }

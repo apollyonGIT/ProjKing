@@ -54,34 +54,5 @@ namespace Battles.Players
             cell.tick1();
         }
 
-
-        public void move_right()
-        {
-            cell.actionLine.add_action_line("acti_move_right");
-        }
-
-
-        public void move_left()
-        {
-            cell.actionLine.add_action_line("acti_move_left");
-        }
-
-
-        public void double_ac()
-        {
-            cell.actionLine.add_action_line("acti_double_ac");
-        }
-
-
-        public void attack()
-        {
-            cell.actionLine.add_action_line("acti_attack");
-        }
-
-
-        public void cast()
-        {
-            cell.actionLine.cast();
-        }
     }
 }

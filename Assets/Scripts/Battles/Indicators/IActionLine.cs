@@ -27,9 +27,11 @@ namespace Battles.Indicators
         }
 
 
-        public void remove_action_line(string action_line)
+        public void remove_action_line(LinkedListNode<string> node)
         {
-            action_lines.Remove(action_line);
+            if (!action_lines.Any()) return;
+
+            action_lines.Remove(node);
             need_refresh = true;
         }
 
@@ -90,6 +92,12 @@ namespace Battles.Indicators
 
         //==================================================================================================
 
+        void delete_ac()
+        {
+            remove_action_line(action_lines.Last);
+        }
+
+
         void cast()
         {
             if (!action_lines.Any()) return;
@@ -115,7 +123,7 @@ namespace Battles.Indicators
                 void do_cast(Request req)
                 {
                     typeof(IActionLine).GetMethod(action_lines.First())?.Invoke(this, null);
-                    remove_action_line(action_lines.First());
+                    remove_action_line(action_lines.First);
                 }
                 #endregion
             }
@@ -126,7 +134,7 @@ namespace Battles.Indicators
 
         }
 
-
+        #region 行动块
         void acti_move_right()
         {
             var x = pos.x;
@@ -189,6 +197,7 @@ namespace Battles.Indicators
 
         }
 
+        #endregion
     }
 }
 

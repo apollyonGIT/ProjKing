@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Commons;
 using Foundations.Tickers;
 using UnityEngine;
 
@@ -101,15 +102,14 @@ namespace Battles.Indicators
             //合成行动块
             var can_merge = false;
             can_merge = try_merge_action_line();
-            Debug.Log(can_merge);
 
-            var merge_tick = can_merge ? 20 : 0;
+            var merge_tick = can_merge ? Config_Utility.second_2_tick(0.5f) : 0;
 
             //执行行动块
             var i = 0;
             while (i < action_lines.Count)
             {
-                Request_Helper.delay_do($"player_action_line_cast_{i}", merge_tick + i * 30, do_cast);
+                Request_Helper.delay_do($"player_action_line_cast_{i}", merge_tick + i * Config_Utility.second_2_tick(0.25f), do_cast);
                 i++;
 
                 #region 子函数 do_cast

@@ -12,7 +12,7 @@ namespace Foundations.Saves
             FileStream stream = new(path, FileMode.Create);
 
             using BinaryWriter bw = new(stream);
-            var buffer = EX_Utility.object2byte(obj);
+            var buffer = EX_Utility.object_2_byte(obj);
 
             bw.Write(buffer);
         }
@@ -22,7 +22,7 @@ namespace Foundations.Saves
         {
             var buffer = File.ReadAllBytes(path);
 
-            ret = (T)EX_Utility.byte2object(buffer);
+            ret = (T)EX_Utility.byte_2_object(buffer);
         }
     }
 }

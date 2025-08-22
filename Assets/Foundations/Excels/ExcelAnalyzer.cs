@@ -22,7 +22,7 @@ namespace Foundations.Excels
 
             Addressable_Utility.try_load_asset(record_class_name, out AssetRef asset_ref);
             var binary_asset = (BinaryAsset)(asset_ref.asset);
-            var data = (Dictionary<string, List<object>>)EX_Utility.byte2object(binary_asset.bytes);
+            var data = (Dictionary<string, List<object>>)EX_Utility.byte_2_object(binary_asset.bytes);
 
             var records_type = records_fi.FieldType;
             records = Activator.CreateInstance(records_type);

@@ -68,8 +68,8 @@ namespace Foundation_Editors.DialogGraphs
         public static void load_graph(DialogGraphAsset asset)
         {
             var view = new_graph(asset);
-            var asset_nodes = (Dictionary<string, DialogNode_Data>)EX_Utility.byte2object(asset.nodes_data);
-            var asset_edges = (Dictionary<string, Edge_Data>)EX_Utility.byte2object(asset.edges_data);
+            var asset_nodes = (Dictionary<string, DialogNode_Data>)EX_Utility.byte_2_object(asset.nodes_data);
+            var asset_edges = (Dictionary<string, Edge_Data>)EX_Utility.byte_2_object(asset.edges_data);
 
             foreach (var (_ ,asset_node) in asset_nodes)
             {
@@ -136,7 +136,7 @@ namespace Foundation_Editors.DialogGraphs
 
                 nodes_data_dic.Add(view_node._desc.GUID, view_node._desc.clone());
             }
-            asset.nodes_data = EX_Utility.object2byte(nodes_data_dic);
+            asset.nodes_data = EX_Utility.object_2_byte(nodes_data_dic);
 
             foreach (var view_edge in view.edges)
             {
@@ -165,7 +165,7 @@ namespace Foundation_Editors.DialogGraphs
 
                 edges_data_dic.Add(edge_data.GUID, edge_data);
             }
-            asset.edges_data = EX_Utility.object2byte(edges_data_dic);
+            asset.edges_data = EX_Utility.object_2_byte(edges_data_dic);
 
             EditorUtility.SetDirty(asset);
             AssetDatabase.SaveAssetIfDirty(asset);

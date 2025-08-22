@@ -156,7 +156,7 @@ namespace Foundation_Editors.ExcelImporters
                             //组装binaryAsset
                             var binary = ScriptableObject.CreateInstance<BinaryAsset>();
                             binary.name = sheet_name;
-                            binary.bytes = EX_Utility.object2byte(datas);
+                            binary.bytes = EX_Utility.object_2_byte(datas);
 
                             _binarys.Add(binary);
 

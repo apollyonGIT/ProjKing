@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Commons
@@ -43,4 +42,18 @@ namespace Commons
         #endregion
     }
 
+
+    public class Config_Utility
+    {
+        public static int second_2_tick(float sec)
+        {
+            return Mathf.RoundToInt(sec * Config.PHYSICS_TICKS_PER_SECOND);
+        }
+
+
+        public static int tick60_2_tick(int tick60)
+        {
+            return second_2_tick(tick60 / 60f);
+        }
+    }
 }

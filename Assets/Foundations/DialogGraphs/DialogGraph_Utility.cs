@@ -10,8 +10,8 @@ namespace Foundations.DialogGraphs
             coders_dic = new();
             entry_key = "";
 
-            var asset_edges = (Dictionary<string, Edge_Data>)EX_Utility.byte2object(asset.edges_data);
-            var asset_nodes = (Dictionary<string, DialogNode_Data>)EX_Utility.byte2object(asset.nodes_data);
+            var asset_edges = (Dictionary<string, Edge_Data>)EX_Utility.byte_2_object(asset.edges_data);
+            var asset_nodes = (Dictionary<string, DialogNode_Data>)EX_Utility.byte_2_object(asset.nodes_data);
 
             foreach (var (_, connect) in asset_edges)
             {

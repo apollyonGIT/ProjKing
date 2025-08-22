@@ -8,7 +8,7 @@ namespace Foundations
 {
     public class EX_Utility
     {
-        public static byte[] object2byte(object obj)
+        public static byte[] object_2_byte(object obj)
         {
             if (obj == null)
                 return null;
@@ -22,7 +22,7 @@ namespace Foundations
         }
 
 
-        public static object byte2object(byte[] bytes)
+        public static object byte_2_object(byte[] bytes)
         {
             if (bytes == null)
                 return null;
@@ -105,7 +105,6 @@ namespace Foundations
         {
             return Quaternion.LookRotation(Vector3.forward, new Vector2(-dir.y, dir.x));
         }
-
     }
 }
 

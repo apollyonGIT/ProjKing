@@ -1,5 +1,6 @@
 ﻿using Foundations;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace Battles.Players
 {
@@ -24,14 +25,17 @@ namespace Battles.Players
 
         public override void call()
         {
-            
         }
 
 
         Player cell()
         {
-            Player cell = new();
-            cell.pos = new(1, 0);
+            Player cell = new()
+            {
+                //规则：随机位置、朝向
+                pos = new(Random.Range(0, BattleContext.instance.plots_count), 0),
+                dir = Random.Range(0, 100) > 50 ? Vector2.right : Vector2.left
+            };
 
             return cell;
         }

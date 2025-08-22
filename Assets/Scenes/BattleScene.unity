@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 4143884423610723037, guid: 83835902658e65e43b4c9d3fedfca40d, type: 3}
-  counts: 7
+  counts: 11
 --- !u!1 &688834825
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

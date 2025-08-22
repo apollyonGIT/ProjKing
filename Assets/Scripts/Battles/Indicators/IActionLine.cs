@@ -114,7 +114,12 @@ namespace Battles.Indicators
 
         void acti_double_ac()
         {
-            //dir = new(-dir.x, dir.y);
+        }
+
+
+        void acti_turn_around()
+        {
+            dir = new(-dir.x, dir.y);
         }
 
 

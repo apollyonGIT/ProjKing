@@ -49,6 +49,7 @@ namespace Battles.Indicators
                         node.Next.Value = node.Value;
 
                         ret = node.Next.Value != "acti_double_ac";
+                        node = node.Next;
                     }
                     else
                     {
@@ -57,6 +58,8 @@ namespace Battles.Indicators
 
                         ret = true;
                     }
+
+                    continue;
                 }
 
                 if ((node.Value == "acti_move_right" && node.Next.Value == "acti_move_left") || (node.Value == "acti_move_left" && node.Next.Value == "acti_move_right"))
@@ -65,13 +68,13 @@ namespace Battles.Indicators
                     action_lines.Remove(node.Next);
 
                     ret = true;
+                    continue;
                 }
 
                 node = node.Next;
             }
 
             need_refresh = ret;
-
             return ret;
 
 
@@ -79,17 +82,6 @@ namespace Battles.Indicators
             bool valid_action_is_2(string action_line)
             {
                 return action_line.Contains('2') || action_line == "acti_turn_around" || action_line == "acti_double_ac";
-            }
-            #endregion
-
-
-            #region 子函数 action_to_2
-            string action_to_2(string action_line)
-            {
-                if (action_line == "acti_double_ac") 
-                    return action_line;
-
-                return action_line + "2";
             }
             #endregion
         }

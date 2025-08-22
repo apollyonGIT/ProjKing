@@ -97,7 +97,6 @@ namespace Battles.Indicators
             //冻结输入
             var ctx = BattleContext.instance;
             ctx.is_ban_player_input = true;
-            Request_Helper.delay_do($"cancel_ban_player_input", action_lines.Count * 30, (_) => { ctx.is_ban_player_input = false; });
 
             //合成行动块
             var can_merge = false;
@@ -120,6 +119,11 @@ namespace Battles.Indicators
                 }
                 #endregion
             }
+
+            //解冻输入
+            var whole_tick = merge_tick + i * Config_Utility.second_2_tick(0.25f);
+            Request_Helper.delay_do($"revocer_input", whole_tick, (_) => { ctx.is_ban_player_input = false; });
+
         }
 
 

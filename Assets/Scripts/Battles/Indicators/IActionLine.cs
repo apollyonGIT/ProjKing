@@ -128,8 +128,8 @@ namespace Battles.Indicators
 
         }
 
-        #region 行动块
-        void acti_move_right()
+
+        void move_right()
         {
             var x = pos.x;
 
@@ -139,8 +139,7 @@ namespace Battles.Indicators
         }
 
 
-
-        void acti_move_left()
+        void move_left()
         {
             var x = pos.x;
 
@@ -150,12 +149,18 @@ namespace Battles.Indicators
         }
 
 
-
-        void acti_turn_around()
+        void turn_around()
         {
             dir = new(-dir.x, dir.y);
         }
 
+
+        void wait()
+        { 
+        }
+
+
+        #region 行动块
 
         #endregion
     }

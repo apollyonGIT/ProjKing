@@ -92,12 +92,6 @@ namespace Battles.Indicators
 
         //==================================================================================================
 
-        void delete_ac()
-        {
-            remove_action_line(action_lines.Last);
-        }
-
-
         void cast()
         {
             if (!action_lines.Any()) return;
@@ -145,15 +139,6 @@ namespace Battles.Indicators
         }
 
 
-        void acti_move_right2()
-        {
-            var x = pos.x;
-
-            x += 2;
-            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
-            pos = new(x, pos.y);
-        }
-
 
         void acti_move_left()
         {
@@ -165,37 +150,12 @@ namespace Battles.Indicators
         }
 
 
-        void acti_move_left2()
-        {
-            var x = pos.x;
-
-            x -= 2;
-            x = Mathf.Clamp(x, 0, BattleContext.instance.plots_count - 1);
-            pos = new(x, pos.y);
-        }
-
-
-        void acti_double_ac()
-        {
-        }
-
 
         void acti_turn_around()
         {
             dir = new(-dir.x, dir.y);
         }
 
-
-        void acti_attack()
-        {
-
-        }
-
-
-        void acti_attack2()
-        {
-
-        }
 
         #endregion
     }

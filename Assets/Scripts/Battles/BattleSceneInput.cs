@@ -1,4 +1,5 @@
-﻿using Battles.Players;
+﻿using Battles.Indicators;
+using Battles.Players;
 using Foundations;
 using UnityEngine;
 
@@ -14,7 +15,9 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.add_action_line("acti_move_left");
+            mgr.cell.actionLine.acti_move_left();
+
+            //mgr.cell.actionLine.add_action_line("acti_move_left");
         }
 
 
@@ -23,25 +26,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.add_action_line("acti_move_right");
-        }
-
-
-        public void OnDoubleAC()
-        {
-            if (BattleContext.instance.is_ban_player_input) return;
-
-            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.add_action_line("acti_double_ac");
-        }
-
-
-        public void OnAttack()
-        {
-            if (BattleContext.instance.is_ban_player_input) return;
-
-            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.add_action_line("acti_attack");
+            mgr.cell.actionLine.acti_move_right();
         }
 
 
@@ -51,15 +36,6 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.cell.actionLine.cast();
-        }
-
-
-        public void OnDeleteAC()
-        {
-            if (BattleContext.instance.is_ban_player_input) return;
-
-            Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.delete_ac();
         }
     }
 }

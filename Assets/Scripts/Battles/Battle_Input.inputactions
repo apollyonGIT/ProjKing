@@ -24,36 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DoubleAC",
-                    "type": "Button",
-                    "id": "3ca2fad4-cd19-4174-ac2d-58256122d6f1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "d70d7bd8-7769-48f9-b6c8-2fa2cb692c4e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Cast",
                     "type": "Button",
                     "id": "4653f738-6e49-4a98-8e06-7e69f6394993",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "DeleteAC",
-                    "type": "Button",
-                    "id": "45c6c335-99a2-49f5-90de-5ef712d9a466",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -85,45 +58,12 @@
                 },
                 {
                     "name": "",
-                    "id": "6c6d5d94-6152-4151-ae7c-2b48289767fb",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DoubleAC",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5e3e2236-1f19-4fb3-a00f-615451929561",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5355a1e3-ab49-464e-930d-a704227bdf5a",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Cast",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "69166fb4-1443-4568-9824-99c351430e3c",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DeleteAC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

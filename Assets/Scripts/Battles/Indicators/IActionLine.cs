@@ -45,48 +45,20 @@ namespace Battles.Indicators
 
             while (node != null && node.Next != null)
             {
-                if (node.Next.Value == "acti_double_ac")
-                {
-                    if (valid_action_is_2(node.Value))
-                    {
-                        node.Next.Value = node.Value;
+                //if ((node.Value == "acti_move_right" && node.Next.Value == "acti_move_left") || (node.Value == "acti_move_left" && node.Next.Value == "acti_move_right"))
+                //{
+                //    node.Value = "acti_turn_around";
+                //    action_lines.Remove(node.Next);
 
-                        ret = node.Next.Value != "acti_double_ac";
-                        node = node.Next;
-                    }
-                    else
-                    {
-                        node.Value += "2";
-                        action_lines.Remove(node.Next);
-
-                        ret = true;
-                    }
-
-                    continue;
-                }
-
-                if ((node.Value == "acti_move_right" && node.Next.Value == "acti_move_left") || (node.Value == "acti_move_left" && node.Next.Value == "acti_move_right"))
-                {
-                    node.Value = "acti_turn_around";
-                    action_lines.Remove(node.Next);
-
-                    ret = true;
-                    continue;
-                }
+                //    ret = true;
+                //    continue;
+                //}
 
                 node = node.Next;
             }
 
             need_refresh = ret;
             return ret;
-
-
-            #region 子函数 valid_action_is_2
-            bool valid_action_is_2(string action_line)
-            {
-                return action_line.Contains('2') || action_line == "acti_turn_around" || action_line == "acti_double_ac";
-            }
-            #endregion
         }
 
 
@@ -110,7 +82,7 @@ namespace Battles.Indicators
             var i = 0;
             while (i < action_lines.Count)
             {
-                Request_Helper.delay_do($"player_action_line_cast_{i}", merge_tick + i * Config_Utility.second_2_tick(0.25f), do_cast);
+                Request_Helper.delay_do($"acti_cast_{i}", merge_tick + i * Config_Utility.second_2_tick(0.25f), do_cast);
                 i++;
 
                 #region 子函数 do_cast
@@ -129,7 +101,7 @@ namespace Battles.Indicators
         }
 
 
-        void move_right()
+        void acti_move_right()
         {
             var x = pos.x;
 
@@ -139,7 +111,7 @@ namespace Battles.Indicators
         }
 
 
-        void move_left()
+        void acti_move_left()
         {
             var x = pos.x;
 
@@ -149,13 +121,13 @@ namespace Battles.Indicators
         }
 
 
-        void turn_around()
+        void acti_turn_around()
         {
             dir = new(-dir.x, dir.y);
         }
 
 
-        void wait()
+        void acti_wait()
         { 
         }
 

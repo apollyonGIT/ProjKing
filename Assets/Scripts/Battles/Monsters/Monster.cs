@@ -1,6 +1,9 @@
-﻿using Commons;
+﻿using Battles.Indicators;
+using Commons;
 using Foundations.MVVM;
+using Foundations.Tickers;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Battles.Monsters
@@ -11,7 +14,7 @@ namespace Battles.Monsters
     }
 
 
-    public class Monster : Model<Monster, IMonsterView>
+    public class Monster : Model<Monster, IMonsterView>, IActionLine
     {
         public AutoCodes.monster _desc;
         public string GUID;
@@ -21,6 +24,19 @@ namespace Battles.Monsters
 
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;
+
+        #region IActionLine
+        Vector2 IActionLine.pos { get => pos; set => pos = value; }
+        Vector2 IActionLine.dir { get => dir; set => dir = value; }
+
+        LinkedList<string> IActionLine.action_lines { get => m_action_lines; set => m_action_lines = value; }
+        LinkedList<string> m_action_lines = new();
+
+        bool IActionLine.need_refresh { get => m_need_refresh; set => m_need_refresh = value; }
+        bool m_need_refresh;
+
+        public IActionLine actionLine => this;
+        #endregion
 
         //==================================================================================================
 
@@ -32,6 +48,10 @@ namespace Battles.Monsters
 
             this.pos = pos;
             this.dir = dir;
+
+            //actionLine.add_action_line("acti_move_left");
+            //actionLine.add_action_line("acti_move_right");
+            //Request_Helper.delay_do("111", Config_Utility.second_2_tick(1f), (_) => { actionLine.cast(); });
         }
 
 

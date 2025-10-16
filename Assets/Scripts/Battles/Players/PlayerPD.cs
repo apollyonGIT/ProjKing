@@ -1,6 +1,5 @@
 ﻿using Foundations;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace Battles.Players
 {

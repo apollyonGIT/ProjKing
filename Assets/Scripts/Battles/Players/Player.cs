@@ -20,7 +20,7 @@ namespace Battles.Players
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;
 
-        #region IMover
+        #region IActionLine
         Vector2 IActionLine.pos { get => pos; set => pos = value; }
         Vector2 IActionLine.dir { get => dir; set => dir = value; }
 

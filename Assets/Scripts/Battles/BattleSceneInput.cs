@@ -15,7 +15,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.move_left();
+            mgr.cell.actionLine.acti_move_left();
 
             //mgr.cell.actionLine.add_action_line("acti_move_left");
         }
@@ -26,7 +26,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.move_right();
+            mgr.cell.actionLine.acti_move_right();
         }
 
 
@@ -35,7 +35,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.turn_around();
+            mgr.cell.actionLine.acti_turn_around();
         }
 
 
@@ -44,7 +44,7 @@ namespace Battles
             if (BattleContext.instance.is_ban_player_input) return;
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
-            mgr.cell.actionLine.wait();
+            mgr.cell.actionLine.acti_wait();
         }
 
 

@@ -68,6 +68,12 @@ namespace Battles.Monsters
                 view.notify_on_tick1();
             }
         }
+
+
+        public void do_turn()
+        {
+            actionLine.add_action_line("acti_move_left");
+        }
     }
 }
 

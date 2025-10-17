@@ -1,4 +1,4 @@
-﻿using Battles.Indicators;
+﻿using Battles.Helpers;
 using Battles.Players;
 using Foundations;
 using UnityEngine;
@@ -18,6 +18,8 @@ namespace Battles
             mgr.cell.actionLine.acti_move_left();
 
             //mgr.cell.actionLine.add_action_line("acti_move_left");
+
+            TurnHelper.to_enemy_turn();
         }
 
 
@@ -27,6 +29,8 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.cell.actionLine.acti_move_right();
+
+            TurnHelper.to_enemy_turn();
         }
 
 
@@ -36,6 +40,8 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.cell.actionLine.acti_turn_around();
+
+            TurnHelper.to_enemy_turn();
         }
 
 
@@ -45,6 +51,8 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.cell.actionLine.acti_wait();
+
+            TurnHelper.to_enemy_turn();
         }
 
 
@@ -54,6 +62,8 @@ namespace Battles
 
             Mission.instance.try_get_mgr("PlayerMgr", out PlayerMgr mgr);
             mgr.cell.actionLine.cast();
+
+            TurnHelper.to_enemy_turn();
         }
     }
 }

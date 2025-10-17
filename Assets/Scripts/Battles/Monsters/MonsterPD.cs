@@ -19,6 +19,10 @@ namespace Battles.Monsters
 
         public override void call()
         {
+            foreach (var (_, cell) in mgr.cells)
+            {
+                cell.do_turn();
+            }
         }
 
 

@@ -52,6 +52,19 @@ namespace Battles.Consoles
             var pd = mgr.pd;
             pd.cell(201102u, pos, dir);
         }
+
+
+        [Detail("【添加蝙蝠骑士】m5")]
+        public static void m5(string _pos_x, string _dir_x)
+        {
+            Vector2 pos = new(float.Parse(_pos_x), 0);
+            Vector2 dir = new(float.Parse(_dir_x), 0);
+
+            Mission.instance.try_get_mgr("MonsterMgr", out Monsters.MonsterMgr mgr);
+
+            var pd = mgr.pd;
+            pd.cell(201105u, pos, dir);
+        }
     }
 }
 

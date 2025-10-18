@@ -1,7 +1,7 @@
 ﻿using Commons;
 using UnityEngine;
 
-namespace Battles.Consoles
+namespace Battle.Consoles
 {
     public class BattleConsoleInput : MonoBehaviour
     {

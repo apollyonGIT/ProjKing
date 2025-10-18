@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Battles.Monsters
+namespace Battle.Monsters
 {
     public class MonsterView : MonoBehaviour, IMonsterView
     {

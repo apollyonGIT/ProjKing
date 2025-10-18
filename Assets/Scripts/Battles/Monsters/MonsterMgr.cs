@@ -1,7 +1,7 @@
 ﻿using Foundations;
 using System.Collections.Generic;
 
-namespace Battles.Monsters
+namespace Battle.Monsters
 {
     public class MonsterMgr : IMgr
     {

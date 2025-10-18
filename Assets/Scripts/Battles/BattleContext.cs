@@ -1,7 +1,7 @@
 ﻿using Foundations;
 using Foundations.Tickers;
 
-namespace Battles
+namespace Battle
 {
     public class BattleContext : Singleton<BattleContext>
     {

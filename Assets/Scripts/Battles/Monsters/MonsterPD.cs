@@ -1,7 +1,7 @@
 ﻿using Foundations;
 using UnityEngine;
 
-namespace Battles.Monsters
+namespace Battle.Monsters
 {
     public class MonsterPD : Producer
     {

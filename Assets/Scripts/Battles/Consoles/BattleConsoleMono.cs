@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace Battles.Consoles
+namespace Battle.Consoles
 {
     public class BattleConsoleMono : MonoBehaviour
     {

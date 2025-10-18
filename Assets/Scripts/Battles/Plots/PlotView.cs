@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Battles.Plots
+namespace Battle.Plots
 {
     public class PlotView : MonoBehaviour, IPlotView
     {

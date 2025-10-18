@@ -2,7 +2,7 @@
 using Foundations.MVVM;
 using UnityEngine;
 
-namespace Battles.Plots
+namespace Battle.Plots
 {
     public interface IPlotView : IModelView<Plot>
     {

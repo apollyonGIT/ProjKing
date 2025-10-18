@@ -1,7 +1,7 @@
 ﻿using Foundations;
 using UnityEngine;
 
-namespace Battles.Cameras
+namespace Battle.Cameras
 {
     public class CameraPD : Producer
     {

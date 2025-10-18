@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Battles.Indicators
+namespace Battle.Indicators
 {
     public class ActionLineVCPN : MonoBehaviour
     {

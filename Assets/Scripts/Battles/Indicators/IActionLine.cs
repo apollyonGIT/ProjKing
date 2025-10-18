@@ -4,7 +4,7 @@ using Commons;
 using Foundations.Tickers;
 using UnityEngine;
 
-namespace Battles.Indicators
+namespace Battle.Indicators
 {
     public interface IActionLine
     {

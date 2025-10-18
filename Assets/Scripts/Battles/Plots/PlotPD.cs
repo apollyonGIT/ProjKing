@@ -3,7 +3,7 @@ using Commons;
 using Foundations;
 using UnityEngine;
 
-namespace Battles.Plots
+namespace Battle.Plots
 {
     public class PlotPD : Producer
     {

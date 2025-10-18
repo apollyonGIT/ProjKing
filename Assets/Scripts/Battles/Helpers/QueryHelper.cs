@@ -1,11 +1,11 @@
-﻿using Battles.Monsters;
-using Battles.Players;
+﻿using Battle.Monsters;
+using Battle.Players;
 using Foundations;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Battles.Helpers
+namespace Battle.Helpers
 {
     public class QueryHelper
     {

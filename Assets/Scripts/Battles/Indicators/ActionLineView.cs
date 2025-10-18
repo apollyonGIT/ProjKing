@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Battles.Indicators
+namespace Battle.Indicators
 {
     public class ActionLineView : MonoBehaviour
     {

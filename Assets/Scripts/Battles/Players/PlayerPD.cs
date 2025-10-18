@@ -1,7 +1,7 @@
 ﻿using Foundations;
 using UnityEngine;
 
-namespace Battles.Players
+namespace Battle.Players
 {
     public class PlayerPD : Producer
     {

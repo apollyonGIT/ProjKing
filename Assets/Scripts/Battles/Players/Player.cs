@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Battles.Indicators;
+using Battle.Indicators;
 using Commons;
 using Foundations.MVVM;
 using UnityEngine;
 
-namespace Battles.Players
+namespace Battle.Players
 {
     public interface IPlayerView : IModelView<Player>
     {

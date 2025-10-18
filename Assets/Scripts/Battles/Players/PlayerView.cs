@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-namespace Battles.Players
+namespace Battle.Players
 {
     public class PlayerView : MonoBehaviour, IPlayerView
     {

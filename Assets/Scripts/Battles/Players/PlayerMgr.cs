@@ -1,6 +1,6 @@
 ﻿using Foundations;
 
-namespace Battles.Players
+namespace Battle.Players
 {
     public class PlayerMgr : IMgr
     {

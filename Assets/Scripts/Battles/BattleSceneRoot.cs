@@ -4,7 +4,7 @@ using Foundations.Tickers;
 using TMPro;
 using UnityEngine;
 
-namespace Battles
+namespace Battle
 {
     public class BattleSceneRoot : SceneRoot<BattleSceneRoot>
     {

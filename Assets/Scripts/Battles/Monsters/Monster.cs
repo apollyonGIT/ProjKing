@@ -1,12 +1,14 @@
-﻿using Battles.Indicators;
+﻿using Battle.Indicators;
+using Battle.Monsters.BT;
 using Commons;
 using Foundations.MVVM;
 using Foundations.Tickers;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
-namespace Battles.Monsters
+namespace Battle.Monsters
 {
     public interface IMonsterView : IModelView<Monster>
     {
@@ -24,6 +26,8 @@ namespace Battles.Monsters
 
         public Vector2 dir = Vector2.right;
         public int flipX => dir.x > 0 ? 1 : -1;
+
+        public Monster_BT bt;
 
         #region IActionLine
         Vector2 IActionLine.pos { get => pos; set => pos = value; }
@@ -52,6 +56,9 @@ namespace Battles.Monsters
             //actionLine.add_action_line("acti_move_left");
             //actionLine.add_action_line("acti_move_right");
             //Request_Helper.delay_do("111", Config_Utility.second_2_tick(1f), (_) => { actionLine.cast(); });
+
+            var type = Assembly.Load("Battle").GetType("Battle.Monsters.BT.BT_bat");
+            bt = (Monster_BT)Activator.CreateInstance(type);
         }
 
 
@@ -72,7 +79,7 @@ namespace Battles.Monsters
 
         public void do_turn()
         {
-            actionLine.add_action_line("acti_move_left");
+            bt.@do(this);
         }
     }
 }

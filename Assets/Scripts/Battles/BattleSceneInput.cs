@@ -1,9 +1,9 @@
-﻿using Battles.Helpers;
-using Battles.Players;
+﻿using Battle.Helpers;
+using Battle.Players;
 using Foundations;
 using UnityEngine;
 
-namespace Battles
+namespace Battle
 {
     public class BattleSceneInput : MonoBehaviour
     {

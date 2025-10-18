@@ -3,7 +3,7 @@ using Foundations;
 using UnityEngine;
 using static Commons.Attributes;
 
-namespace Battles.Consoles
+namespace Battle.Consoles
 {
     public class BattleConsoleCode
     {

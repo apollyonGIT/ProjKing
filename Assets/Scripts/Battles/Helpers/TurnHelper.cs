@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Foundations;
 
-namespace Battles.Helpers
+namespace Battle.Helpers
 {
     public class TurnHelper
     {

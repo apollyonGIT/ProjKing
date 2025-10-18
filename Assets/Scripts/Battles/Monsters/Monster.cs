@@ -2,7 +2,6 @@
 using Battle.Monsters.BT;
 using Commons;
 using Foundations.MVVM;
-using Foundations.Tickers;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -59,6 +58,7 @@ namespace Battle.Monsters
 
             var type = Assembly.Load("Battle").GetType("Battle.Monsters.BT.BT_bat");
             bt = (Monster_BT)Activator.CreateInstance(type);
+            bt.init(this);
         }
 
 
@@ -79,7 +79,7 @@ namespace Battle.Monsters
 
         public void do_turn()
         {
-            bt.@do(this);
+            bt.notify_on_turn(this);
         }
     }
 }

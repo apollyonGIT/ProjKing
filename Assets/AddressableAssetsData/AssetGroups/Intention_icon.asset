@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Intention_icon
+  m_EditorClassIdentifier: 
+  m_GroupName: Intention_icon
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 007d27dbdc6e8724bbf161271ce2c309
+  m_SerializeEntries:
+  - m_GUID: 63db2c7d78cd59b4cb692426dd4fbcfd
+    m_Address: intention_move_left
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fcd4cbcc3731b349aa8d0c9b674597f
+    m_Address: intention_move_right
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 82788fcdea99bc1479d21577250b5840, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 214a0d4525b16bc4a88c9539bde91518, type: 2}
+    - {fileID: 11400000, guid: 56621adfa1db7c54dab6513aa3a0ac8d, type: 2}

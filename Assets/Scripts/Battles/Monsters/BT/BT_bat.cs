@@ -37,15 +37,12 @@ namespace Battle.Monsters.BT
         public void start_idle(Monster cell)
         {
             //cell.actionLine.add_action_line("acti_move_right");
-
-            Debug.Log("start_idle");
+            //cell.itention.add_itention("intention_move_left");
         }
 
 
         public void do_idle(Monster cell)
         {
-            Debug.Log("do_idle");
-            m_state = EN_state.chase;
         }
         #endregion
 
@@ -53,16 +50,11 @@ namespace Battle.Monsters.BT
         #region chase
         public void start_chase(Monster cell)
         {
-            //cell.actionLine.add_action_line("acti_move_right");
-
-            Debug.Log("start_chase");
         }
 
 
         public void do_chase(Monster cell)
         {
-            Debug.Log("do_chase");
-            m_state = EN_state.idle;
         }
         #endregion
     }

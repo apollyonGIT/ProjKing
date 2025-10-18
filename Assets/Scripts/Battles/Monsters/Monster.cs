@@ -15,7 +15,7 @@ namespace Battle.Monsters
     }
 
 
-    public class Monster : Model<Monster, IMonsterView>, IActionLine
+    public class Monster : Model<Monster, IMonsterView>, IActionLine, IItention
     {
         public AutoCodes.monster _desc;
         public string GUID;
@@ -41,6 +41,19 @@ namespace Battle.Monsters
         public IActionLine actionLine => this;
         #endregion
 
+        #region IItention
+        bool IItention.need_refresh { get => m_need_itention_refresh; set => m_need_itention_refresh = value; }
+        bool m_need_itention_refresh;
+
+        bool IItention.is_active { get => m_is_itention_active; set => m_is_itention_active = value; }
+        bool m_is_itention_active;
+
+        string IItention.img_name { get => m_img_name; set => m_img_name = value; }
+        string m_img_name;
+
+        public IItention itention => this;
+        #endregion
+
         //==================================================================================================
 
         public Monster(uint uid, Vector2 pos, Vector2 dir)
@@ -56,7 +69,7 @@ namespace Battle.Monsters
             //actionLine.add_action_line("acti_move_right");
             //Request_Helper.delay_do("111", Config_Utility.second_2_tick(1f), (_) => { actionLine.cast(); });
 
-            var type = Assembly.Load("Battle").GetType("Battle.Monsters.BT.BT_bat");
+            var type = Assembly.Load("Battle").GetType($"Battle.Monsters.BT.{_desc.monster_behaviour_tree}");
             bt = (Monster_BT)Activator.CreateInstance(type);
             bt.init(this);
         }
